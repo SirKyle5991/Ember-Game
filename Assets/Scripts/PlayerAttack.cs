@@ -17,15 +17,18 @@ public class PlayerAttack : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMovement(0) && cooldownTimer > attackCooldown && playerController.canAttack())
+        if (Input.GetKeyDown(KeyCode.C) && cooldownTimer > attackCooldown)
+        {
             Attack();
+        }
 
         cooldownTimer += Time.deltaTime;
     }
 
     private void Attack()
     {
-        anim.SetTrigger("attack");
+        //anim.SetTrigger("attack");
         cooldownTimer = 0;
+        Debug.Log("attack");
     }
 }
