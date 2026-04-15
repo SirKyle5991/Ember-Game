@@ -2036,7 +2036,7 @@ GameObject:
   - component: {fileID: 767870381}
   m_Layer: 0
   m_Name: Platform (2)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5980,6 +5980,10 @@ PrefabInstance:
       propertyPath: Fireball.Array.data[2]
       value: 
       objectReference: {fileID: 1202305744}
+    - target: {fileID: 8904323622085547216, guid: a64d35e12f8257645b5e55c62aeda3fd, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1718241855, guid: e1f699107bc8a844989b89317be21b94, type: 3}
     - target: {fileID: 8904323622085547217, guid: a64d35e12f8257645b5e55c62aeda3fd, type: 3}
       propertyPath: m_RootOrder
       value: 2
