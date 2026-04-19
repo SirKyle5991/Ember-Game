@@ -9,6 +9,12 @@ public class PlayerController : MonoBehaviour
     private Animator anim;
     private bool grounded;
 
+    private bool canDash = true;
+    private bool isDashing;
+    private float dashingPower = 24f;
+    private float dashingTime = 0.2f;
+    private float dashingCooldown = 1f;
+
     private void Awake()
     {
         // grab references for rigidBody and animator for the object
@@ -18,6 +24,11 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+        if (isDashing)
+        {
+            return;
+        }
+        
         float horizontalInput = Input.GetAxis("Horizontal");
         body.velocity = new Vector2(horizontalInput * speed, body.velocity.y);
 
@@ -33,6 +44,11 @@ public class PlayerController : MonoBehaviour
 
         //set animator parameters
         anim.SetBool("Run", horizontalInput != 0);
+
+        if (Input.GetKeyDown(KeyCode.LeftShift) && canDash)
+        {
+            StartCoroutine(Dash());
+        }
     }
 
     private void Jump()
@@ -46,5 +62,19 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.gameObject.tag == "Ground")
             grounded = true;
+    }
+
+    private IEnumerator Dash()
+    {
+        canDash = false;
+        isDashing = true;
+        float originalGravity = body.gravityScale;
+        body.gravityScale = 0f;
+        body.velocity = new Vector2(transform.localScale.x * dashingPower, 0f);
+        yield return new WaitForSeconds(dashingTime);
+        body.gravityScale = originalGravity;
+        isDashing = false;
+        yield return new WaitForSeconds(dashingCooldown);
+        canDash = true;
     }
 }
