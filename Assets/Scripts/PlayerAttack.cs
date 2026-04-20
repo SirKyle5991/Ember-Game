@@ -6,7 +6,8 @@ public class PlayerAttack : MonoBehaviour
 {
     [SerializeField] private float attackCooldown;
     [SerializeField] private Transform attackspawn;
-    [SerializeField] private GameObject[] Fireball;
+    [SerializeField] private Projectile fireballPrefab;
+    //[SerializeField] private GameObject[] Fireball;
     private Animator anim;
     private PlayerController playerController;
     private float cooldownTimer = Mathf.Infinity;
@@ -33,17 +34,20 @@ public class PlayerAttack : MonoBehaviour
         cooldownTimer = 0;
         Debug.Log("attack");
 
-        Fireball[FindFireball()].transform.position = attackspawn.position;
-        Fireball[FindFireball()].GetComponent<Projectile>().SetDirection(Mathf.Sign(transform.localScale.x));
+        var fireball = Instantiate(fireballPrefab, attackspawn.position, Quaternion.identity);
+        fireball.SetDirection(Mathf.Sign(transform.localScale.x));
+
+        //Fireball[FindFireball()].transform.position = attackspawn.position;
+        //Fireball[FindFireball()].GetComponent<Projectile>().SetDirection(Mathf.Sign(transform.localScale.x));
     }
 
-    private int FindFireball()
-    {
-        for (int i = 0; i < Fireball.Length; i++)
-        {
-            if (!Fireball[i].activeInHierarchy)
-                return i;
-        }
-        return 0;
-    }
+    //private int FindFireball()
+    //{
+    //    for (int i = 0; i < Fireball.Length; i++)
+    //    {
+    //        if (!Fireball[i].activeInHierarchy)
+    //            return i;
+    //    }
+    //    return 0;
+    //}
 }

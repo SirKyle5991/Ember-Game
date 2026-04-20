@@ -4,16 +4,22 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    private const int MAX_JUMPS = 2;
+    
     [SerializeField] private float speed;
     private Rigidbody2D body;
     private Animator anim;
-    private bool grounded;
+    private float jumpingPower = 8f; 
+    public bool grounded;
 
     private bool canDash = true;
     private bool isDashing;
     private float dashingPower = 24f;
     private float dashingTime = 0.2f;
     private float dashingCooldown = 1f;
+
+    private bool doubleJump;
+    [SerializeField] private int remainingJumps = 2;
 
     private void Awake()
     {
@@ -28,6 +34,11 @@ public class PlayerController : MonoBehaviour
         {
             return;
         }
+
+        if (grounded && !Input.GetKeyDown(KeyCode.Space))
+        {
+            doubleJump = false;
+        }
         
         float horizontalInput = Input.GetAxis("Horizontal");
         body.velocity = new Vector2(horizontalInput * speed, body.velocity.y);
@@ -39,8 +50,20 @@ public class PlayerController : MonoBehaviour
         else if (horizontalInput < -0.01f)
             transform.localScale = new Vector3(-1, 1, 1);
 
-        if (Input.GetKey(KeyCode.Space) && grounded)
-            Jump();
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            if (grounded || remainingJumps > 0)
+            {
+                body.velocity = new Vector2(body.velocity.x, jumpingPower);
+                remainingJumps--;
+                grounded = false;
+            }
+
+            if (Input.GetKeyDown(KeyCode.Space) && body.velocity.y > 0f)
+            {
+                body.velocity = new Vector2(body.velocity.x, body.velocity.y * 0.5f);
+            }
+        }
 
         //set animator parameters
         anim.SetBool("Run", horizontalInput != 0);
@@ -61,7 +84,10 @@ public class PlayerController : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Ground")
+        {
             grounded = true;
+            remainingJumps = MAX_JUMPS;
+        }
     }
 
     private IEnumerator Dash()

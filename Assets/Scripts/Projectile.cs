@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
+
+    private const int FIREBALL_MAX_LIFE = 5;
+    private const float FIREBALL_DEATH_DELAY = 0.5f;
+
     [SerializeField] private float speed;
     private float direction;
     private bool hit;
@@ -23,9 +27,11 @@ public class Projectile : MonoBehaviour
         if (hit) return;
         float movementSpeed = speed * Time.deltaTime * direction;
         transform.Translate(movementSpeed, 0, 0);
+        
 
         Lifetime += Time.deltaTime;
-        if (Lifetime > 5) gameObject.SetActive(false);
+        if (Lifetime > FIREBALL_MAX_LIFE)
+            Destroy(gameObject, FIREBALL_DEATH_DELAY);
     }
     
     private void OnTriggerEnter2D(Collider2D collision)
@@ -33,6 +39,7 @@ public class Projectile : MonoBehaviour
         hit = true;
         boxCollider.enabled = false;
         anim.SetTrigger("explode");
+        Destroy(gameObject, FIREBALL_DEATH_DELAY);
     }
 
     public void SetDirection(float _direction)
