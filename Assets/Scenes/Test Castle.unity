@@ -1728,7 +1728,7 @@ MonoBehaviour:
   m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 0
-  m_FillAmount: 0.3
+  m_FillAmount: 0.5
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
@@ -2489,7 +2489,7 @@ MonoBehaviour:
   m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 0
-  m_FillAmount: 0.3
+  m_FillAmount: 0.5
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
@@ -5771,7 +5771,7 @@ RectTransform:
   m_GameObject: {fileID: 2133355893}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.1325656, y: 0.30688292, z: 0.58455}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 948194914}
@@ -5781,7 +5781,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -81}
+  m_AnchoredPosition: {x: 67, y: 324}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2133355895
@@ -6045,6 +6045,10 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8904323621276722134, guid: a64d35e12f8257645b5e55c62aeda3fd, type: 3}
       propertyPath: startingHealth
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8904323621276722140, guid: a64d35e12f8257645b5e55c62aeda3fd, type: 3}
+      propertyPath: attackCooldown
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8904323622085547217, guid: a64d35e12f8257645b5e55c62aeda3fd, type: 3}
