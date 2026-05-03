@@ -17,5 +17,21 @@ public class WallSconce : MonoBehaviour
             Instantiate(TorchLitPrefab, objectPosition, transform.rotation);
             Destroy(gameObject);
         }
+        if (col.gameObject.GetComponent<Projectile>())
+        {
+            Debug.Log("i think you hit something");
+            Vector3 objectPosition = transform.position;
+            Debug.Log("my objects position is: " + objectPosition);
+            Instantiate(TorchLitPrefab, objectPosition, transform.rotation);
+            Destroy(gameObject);
+        }
+        if (col.gameObject.GetComponent<Flameburst>())
+        {
+            Debug.Log("i think you hit something");
+            Vector3 objectPosition = transform.position;
+            Debug.Log("my objects position is: " + objectPosition);
+            Instantiate(TorchLitPrefab, objectPosition, transform.rotation);
+            Destroy(gameObject);
+        }
     }
 }

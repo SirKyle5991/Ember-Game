@@ -8,10 +8,12 @@ public class Health : MonoBehaviour
 
     public float currentHealth { get; private set; }
     private Animator anim;
+    private bool dead;
 
     private void Awake()
     {
         currentHealth = startingHealth;
+        anim = GetComponent<Animator>();
     }
     public void TakeDamage(float _damage)
     {
@@ -19,11 +21,16 @@ public class Health : MonoBehaviour
         
         if (currentHealth > 0)
         {
-            //player hurt
+            anim.SetTrigger("hurt");
         }
         else
         {
-            //player dead
+            if(!dead)
+            {
+                anim.SetTrigger("die");
+                GetComponent<PlayerController>().enabled = false;
+                dead = true;
+            }
         }
     }
 

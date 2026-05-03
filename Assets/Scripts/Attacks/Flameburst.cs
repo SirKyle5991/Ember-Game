@@ -22,11 +22,11 @@ public class Flameburst : MonoBehaviour
             //Debug.Log("time flies");
             AOE.SetActive(false);
         }
-        if (Input.GetKeyDown(KeyCode.X))
+        if (AOE.activeSelf != true)
         {
-            Debug.Log("x key was pressed");
-            if (AOE.activeSelf != true)
+            if (Input.GetKeyDown(KeyCode.X))
             {
+                Debug.Log("x key was pressed");
                 AOE.SetActive(true);
                 Timer = 0.0f;
             }
