@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class IceFall : MonoBehaviour
+public class IceSpikes : MonoBehaviour
 {
     [SerializeField] private float damage;
     

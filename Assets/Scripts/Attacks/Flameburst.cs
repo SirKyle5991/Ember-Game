@@ -6,7 +6,7 @@ public class Flameburst : MonoBehaviour
 {
     [SerializeField] private GameObject AOE;
 
-    private float AttackTime = 2.0f;
+    private float AttackTime = 0.5f;
     private float Timer = 0.0f;
 
     void Start()

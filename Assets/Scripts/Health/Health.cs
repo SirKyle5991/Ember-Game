@@ -39,4 +39,8 @@ public class Health : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.W))
             TakeDamage(1);
     }
+    public void AddHealth(float _value)
+    {
+        currentHealth = Mathf.Clamp(currentHealth + _value, 0, startingHealth);
+    }
 }
