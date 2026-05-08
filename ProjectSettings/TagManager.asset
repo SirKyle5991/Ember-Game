@@ -5,11 +5,15 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ground
+  - background
+  - Enemy
+  - IceWall
+  - Fireball
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
   - 
