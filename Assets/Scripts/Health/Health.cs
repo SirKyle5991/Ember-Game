@@ -28,7 +28,15 @@ public class Health : MonoBehaviour
             if(!dead)
             {
                 anim.SetTrigger("die");
-                GetComponent<PlayerController>().enabled = false;
+                
+                //player
+                if(GetComponent<PlayerController>() != null)
+                    GetComponent<PlayerController>().enabled = false;
+
+                //enemy
+                if(GetComponent<Enemy1>() != null)
+                    GetComponent<Enemy1>().enabled = false;
+
                 dead = true;
             }
         }
@@ -38,6 +46,11 @@ public class Health : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.W))
             TakeDamage(1);
+
+        if (dead == true)
+        {
+            Destroy(gameObject, 1);
+        }
     }
     public void AddHealth(float _value)
     {
