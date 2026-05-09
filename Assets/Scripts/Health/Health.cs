@@ -1,17 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Health : MonoBehaviour
 {
     [SerializeField] private float startingHealth;
 
     public float currentHealth { get; private set; }
-    private Animator anim;
-    private bool dead;
+    public Animator anim;
+    public bool dead => currentHealth <= 0;
+    public bool invulnerable;
 
-    [SerializeField] private Behaviour[] components;
-    private bool invulnerable;
+    public UnityEvent onDeath = new();
 
     private void Awake()
     {
@@ -20,6 +21,8 @@ public class Health : MonoBehaviour
     }
     public void TakeDamage(float _damage)
     {
+        if (dead) return;
+        
         currentHealth = Mathf.Clamp(currentHealth - _damage, 0, startingHealth);
         
         if (currentHealth > 0)
@@ -28,20 +31,8 @@ public class Health : MonoBehaviour
         }
         else
         {
-            if(!dead)
-            {
-                anim.SetTrigger("die");
-                
-                //player
-                if(GetComponent<PlayerController>() != null)
-                    GetComponent<PlayerController>().enabled = false;
-
-                //enemy
-                if(GetComponent<Enemy1>() != null)
-                    GetComponent<Enemy1>().enabled = false;
-
-                dead = true;
-            }
+            anim.SetTrigger("die");
+            onDeath.Invoke();
         }
     }
 
@@ -62,12 +53,8 @@ public class Health : MonoBehaviour
 
     public void Respawn()
     {
-        dead = false;
         AddHealth(startingHealth);
-        anim.ResetTrigger("Die");
+        anim.ResetTrigger("die");
         anim.Play("Idle");
-
-        foreach (Behaviour component in components)
-            component.enabled = true;
     }
 }
