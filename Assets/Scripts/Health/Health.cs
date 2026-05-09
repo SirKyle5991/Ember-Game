@@ -41,10 +41,10 @@ public class Health : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.W))
             TakeDamage(1);
 
-        //if (dead == true)
-        //{
-        //        gameObject.SetActive(false);
-        //}
+        if (dead == true)
+        {
+                gameObject.SetActive(false);
+        }
     }
     public void AddHealth(float _value)
     {
