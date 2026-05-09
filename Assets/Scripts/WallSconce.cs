@@ -7,6 +7,8 @@ public class WallSconce : MonoBehaviour
     public GameObject TorchLitPrefab;
     //public Transform spawnPosition;
 
+    private int SconceCounter = 0;
+ 
     private void OnTriggerEnter2D(Collider2D col)
     {
         if(col.gameObject.GetComponent<PlayerController>())
@@ -15,6 +17,8 @@ public class WallSconce : MonoBehaviour
             Vector3 objectPosition = transform.position;
             Debug.Log("my objects position is: " + objectPosition);
             Instantiate(TorchLitPrefab, objectPosition, transform.rotation);
+            SconceCounter = SconceCounter + 1;
+            Debug.Log("Scounter is " + SconceCounter);
             Destroy(gameObject);
         }
         if (col.gameObject.GetComponent<Projectile>())

@@ -10,6 +10,9 @@ public class Health : MonoBehaviour
     private Animator anim;
     private bool dead;
 
+    [SerializeField] private Behaviour[] components;
+    private bool invulnerable;
+
     private void Awake()
     {
         currentHealth = startingHealth;
@@ -47,13 +50,24 @@ public class Health : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.W))
             TakeDamage(1);
 
-        if (dead == true)
-        {
-            Destroy(gameObject, 1);
-        }
+        //if (dead == true)
+        //{
+        //        gameObject.SetActive(false);
+        //}
     }
     public void AddHealth(float _value)
     {
         currentHealth = Mathf.Clamp(currentHealth + _value, 0, startingHealth);
+    }
+
+    public void Respawn()
+    {
+        dead = false;
+        AddHealth(startingHealth);
+        anim.ResetTrigger("Die");
+        anim.Play("Idle");
+
+        foreach (Behaviour component in components)
+            component.enabled = true;
     }
 }
