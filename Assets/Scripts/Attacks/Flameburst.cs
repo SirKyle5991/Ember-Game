@@ -6,8 +6,18 @@ public class Flameburst : MonoBehaviour
 {
     [SerializeField] private GameObject AOE;
 
-    private float AttackTime = 0.5f;
+    private float AttackTime = 1.5f;
     private float Timer = 0.0f;
+
+    public float Damage;
+    
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Enemy")
+        {
+            collision.gameObject.GetComponent<Health>().TakeDamage(-1 * Damage);
+        }
+    }
 
     void Start()
     {
