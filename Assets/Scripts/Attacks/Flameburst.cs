@@ -13,10 +13,10 @@ public class Flameburst : MonoBehaviour
     
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Enemy")
-        {
-            collision.gameObject.GetComponent<Health>().TakeDamage(+1 * Damage);
-        }
+        //if (collision.gameObject.tag == "Enemy")
+        //{
+        //    collision.gameObject.GetComponent<Health>().TakeDamage(+1 * Damage);
+        //}
     }
 
     void Start()
