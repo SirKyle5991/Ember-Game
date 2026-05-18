@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,17 +8,23 @@ public class PlayerController : MonoBehaviour
     private const int MAX_JUMPS = 2;
     
     [SerializeField] private float speed;
+    [SerializeField] private LayerMask groundContactLayers;
+    [SerializeField] float jumpingPower = 4f;
+    [SerializeField] private float playerAcceleration = 10;
     private Rigidbody2D body;
     private Animator anim;
-    private float jumpingPower = 8f; 
+    private BoxCollider2D playerCollisionBounds;
+     
     public bool grounded;
 
     private bool canDash = true;
     private bool isDashing;
+    private bool isJumping;
     private float dashingPower = 24f;
     private float dashingTime = 0.2f;
     private float dashingCooldown = 1f;
-
+    private float horizontalInput;
+    
     private bool doubleJump;
     [SerializeField] private int remainingJumps = 2;
 
@@ -26,6 +33,60 @@ public class PlayerController : MonoBehaviour
         // grab references for rigidBody and animator for the object
         body = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        playerCollisionBounds = GetComponent<BoxCollider2D>();
+    }
+
+    private void FixedUpdate()
+    {
+        var playerHorizontalMovement = Mathf.MoveTowards(body.velocity.x, horizontalInput * speed,
+            playerAcceleration * Time.fixedDeltaTime);
+        
+        body.velocity = new Vector2(playerHorizontalMovement, body.velocity.y);
+        
+        var groundHit = Physics2D.BoxCast((Vector2)transform.position + playerCollisionBounds.offset, playerCollisionBounds.size * 0.95f, 0, Vector2.down, 0.05f, layerMask:groundContactLayers);
+        var isGroundStable = groundHit && !groundHit.collider.isTrigger && groundHit.distance < playerCollisionBounds.size.y / 2f + float.Epsilon;
+        
+        var leftWallHit = Physics2D.BoxCast((Vector2)transform.position + playerCollisionBounds.offset, playerCollisionBounds.size * 0.95f, 0, Vector2.left, 0.05f, layerMask:groundContactLayers);
+        var isLeftWallStable = leftWallHit && !leftWallHit.collider.isTrigger && leftWallHit.distance < playerCollisionBounds.size.x / 2f + float.Epsilon;
+        
+        var rightWallHit = Physics2D.BoxCast((Vector2)transform.position + playerCollisionBounds.offset, playerCollisionBounds.size * 0.95f, 0, Vector2.right, 0.05f, layerMask:groundContactLayers);
+        var isRightWallStable = rightWallHit && !rightWallHit.collider.isTrigger && rightWallHit.distance < playerCollisionBounds.size.x / 2f + float.Epsilon;
+
+        
+        if (isGroundStable)
+        {
+            grounded = true;
+            remainingJumps = MAX_JUMPS;
+        }
+        else
+        {
+            grounded = false;
+        }
+
+        
+        
+        if (isJumping)
+        {
+            if(grounded || (remainingJumps > 0 && !isRightWallStable && !isLeftWallStable))
+            {
+                body.velocity = new Vector2(body.velocity.x, jumpingPower);
+                remainingJumps--;
+                grounded = false;
+            }
+            else
+            {
+                if (isLeftWallStable)
+                {
+                    body.velocity = new Vector2(1, 1).normalized * jumpingPower;
+                }
+                else if (isRightWallStable)
+                {
+                    body.velocity = new Vector2(-1, 1).normalized * jumpingPower;
+                }
+            }
+        }
+
+        isJumping = false;
     }
 
     private void Update()
@@ -40,8 +101,8 @@ public class PlayerController : MonoBehaviour
             doubleJump = false;
         }
         
-        float horizontalInput = Input.GetAxis("Horizontal");
-        body.velocity = new Vector2(horizontalInput * speed, body.velocity.y);
+        horizontalInput = Input.GetAxis("Horizontal");
+        
 
         //flips the player when moving left and right
         if (horizontalInput > 0.01f)
@@ -52,17 +113,13 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            if (grounded || remainingJumps > 0)
-            {
-                body.velocity = new Vector2(body.velocity.x, jumpingPower);
-                remainingJumps--;
-                grounded = false;
-            }
+            isJumping = true;
+            
 
-            if (Input.GetKeyDown(KeyCode.Space) && body.velocity.y > 0f)
-            {
-                body.velocity = new Vector2(body.velocity.x, body.velocity.y * 0.5f);
-            }
+           //if (Input.GetKeyDown(KeyCode.Space) && body.velocity.y > 0f)
+           //{
+           //    body.velocity = new Vector2(body.velocity.x, body.velocity.y * 0.5f);
+           //}
         }
 
         //set animator parameters
@@ -80,15 +137,7 @@ public class PlayerController : MonoBehaviour
         anim.SetTrigger("jump");
         grounded = false;
     }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "Ground")
-        {
-            grounded = true;
-            remainingJumps = MAX_JUMPS;
-        }
-    }
+    
 
     private IEnumerator Dash()
     {
