@@ -38,9 +38,11 @@ public class Health : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.W))
+        if (gameObject.CompareTag("Player"))
+        {
+            if (Input.GetKeyDown(KeyCode.W))
             TakeDamage(1);
-
+        }
         if (dead == true)
         {
                 gameObject.SetActive(false);
