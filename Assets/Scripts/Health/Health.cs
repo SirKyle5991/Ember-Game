@@ -36,6 +36,24 @@ public class Health : MonoBehaviour
         }
     }
 
+    IEnumerator DeathAfterDelay()
+    {
+        yield return new WaitForSeconds(0.9f);
+        gameObject.SetActive(false);
+        if (gameObject.CompareTag("Player"))
+        {
+            gameObject.SetActive(true);
+        }
+    }
+
+    IEnumerator RespawnAfterDelay()
+    {
+        yield return new WaitForSeconds(0);
+        AddHealth(startingHealth);
+        anim.ResetTrigger("die");
+        anim.Play("Idle");
+    }
+
     private void Update()
     {
         if (gameObject.CompareTag("Player"))
@@ -45,7 +63,7 @@ public class Health : MonoBehaviour
         }
         if (dead == true)
         {
-                gameObject.SetActive(false);
+                StartCoroutine(DeathAfterDelay());
         }
     }
     public void AddHealth(float _value)
@@ -55,8 +73,6 @@ public class Health : MonoBehaviour
 
     public void Respawn()
     {
-        AddHealth(startingHealth);
-        anim.ResetTrigger("die");
-        anim.Play("Idle");
+        StartCoroutine(RespawnAfterDelay());
     }
 }
