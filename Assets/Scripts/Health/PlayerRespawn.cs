@@ -12,11 +12,18 @@ public class PlayerRespawn : MonoBehaviour
         playerHealth = GetComponent<Health>();
     }
 
-    public void Respawn()
+    IEnumerator DeathBeforeRespawn()
     {
+        //Set to 0 as no animation has been made for it yet
+        yield return new WaitForSeconds(0);
         transform.position = currentCheckpoint.position;
         playerHealth.Respawn();
         Debug.Log("respawn");
+    }
+
+    public void Respawn()
+    {
+        StartCoroutine(DeathBeforeRespawn());
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

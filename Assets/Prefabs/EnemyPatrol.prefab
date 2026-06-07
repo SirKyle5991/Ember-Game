@@ -173,11 +173,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6673002948631064291, guid: 0733e2844be1aba4ab21b7da04fca1f7, type: 3}
       propertyPath: startingHealth
-      value: 6
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6673002948631064294, guid: 0733e2844be1aba4ab21b7da04fca1f7, type: 3}
       propertyPath: m_Name
       value: LostSoul
+      objectReference: {fileID: 0}
+    - target: {fileID: 6673002948631064295, guid: 0733e2844be1aba4ab21b7da04fca1f7, type: 3}
+      propertyPath: m_Size.y
+      value: 0.7903185
+      objectReference: {fileID: 0}
+    - target: {fileID: 6673002948631064295, guid: 0733e2844be1aba4ab21b7da04fca1f7, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.17196894
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
