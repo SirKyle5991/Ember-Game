@@ -6,19 +6,28 @@ public class WallSconce : MonoBehaviour
 {
     public GameObject TorchLitPrefab;
     //public Transform spawnPosition;
-
+    public SconceCounter SC;
     private int SconceCounter = 0;
+
+    IEnumerator ScoreAdd()
+    {
+        SconceCounter += 1;
+        yield return null;
+    }
  
     private void OnTriggerEnter2D(Collider2D col)
     {
+        SconceCounter++;
+        Debug.Log("Scounter is" + SconceCounter);
+
        if(col.gameObject.GetComponent<PlayerController>())
        {
            Debug.Log("i think you hit something");
            Vector3 objectPosition = transform.position;
            Debug.Log("my objects position is: " + objectPosition);
            Instantiate(TorchLitPrefab, objectPosition, transform.rotation);
-           SconceCounter = SconceCounter + 1;
-           Debug.Log("Scounter is " + SconceCounter);
+           //StartCoroutine(ScoreAdd());
+           //Debug.Log("Scounter is " + SconceCounter);
            Destroy(gameObject);
        }
         if (col.gameObject.GetComponent<Projectile>())
@@ -31,11 +40,11 @@ public class WallSconce : MonoBehaviour
         }
        if (col.gameObject.GetComponent<Flameburst>())
        {
-           Debug.Log("i think you flamebursted something");
-           Vector3 objectPosition = transform.position;
-           Debug.Log("my objects position is: " + objectPosition);
-           Instantiate(TorchLitPrefab, objectPosition, transform.rotation);
-           Destroy(gameObject);
+           //Debug.Log("i think you flamebursted something");
+           //Vector3 objectPosition = transform.position;
+           //Debug.Log("my objects position is: " + objectPosition);
+           //Instantiate(TorchLitPrefab, objectPosition, transform.rotation);
+           //Destroy(gameObject);
        }
     }
 }
