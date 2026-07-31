@@ -24,8 +24,7 @@ public class PlayerController : MonoBehaviour
     private float dashingTime = 0.2f;
     private float dashingCooldown = 1f;
     private float horizontalInput;
-    
-    private bool doubleJump;
+
     [SerializeField] private int remainingJumps = 2;
 
     private void Awake()
@@ -89,17 +88,20 @@ public class PlayerController : MonoBehaviour
         isJumping = false;
     }
 
+    public void OnJump()
+    {
+        isJumping = true;
+    }
+
+
+    
     private void Update()
     {
         if (isDashing)
         {
             return;
         }
-
-        if (grounded && !Input.GetKeyDown(KeyCode.Space))
-        {
-            doubleJump = false;
-        }
+        
         
         horizontalInput = Input.GetAxis("Horizontal");
         
@@ -111,16 +113,6 @@ public class PlayerController : MonoBehaviour
         else if (horizontalInput < -0.01f)
             transform.localScale = new Vector3(-1, 1, 1);
 
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            isJumping = true;
-            
-
-           //if (Input.GetKeyDown(KeyCode.Space) && body.velocity.y > 0f)
-           //{
-           //    body.velocity = new Vector2(body.velocity.x, body.velocity.y * 0.5f);
-           //}
-        }
 
         //set animator parameters
         anim.SetBool("Run", horizontalInput != 0);
