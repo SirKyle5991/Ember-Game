@@ -11,6 +11,8 @@ public class PlayerAttack : MonoBehaviour
     private Animator anim;
     private PlayerController playerController;
     private float cooldownTimer = Mathf.Infinity;
+    //[SerializeField] private Health currentHealth;
+    //private bool CanAttack => currentHealth = 2;
 
     private void Awake()
     {
@@ -30,6 +32,11 @@ public class PlayerAttack : MonoBehaviour
 
     private void Attack()
     {
+        //if (CanAttack)
+        //{
+        //
+        //}
+        
         anim.SetTrigger("attack");
         cooldownTimer = 0;
         Debug.Log("attack");
