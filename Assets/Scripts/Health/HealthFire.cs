@@ -10,7 +10,9 @@ public class HealthFire : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
-            collision.GetComponent<Health>().AddHealth(healthValue);
+            var health = collision.GetComponent<Health>();
+            if(health != null)
+                health.AddHealth(healthValue);
         }
     }
 }

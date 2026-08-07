@@ -54916,17 +54916,13 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0.319
       objectReference: {fileID: 0}
-    - target: {fileID: 506383441, guid: a64d35e12f8257645b5e55c62aeda3fd, type: 3}
-      propertyPath: AOE
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 506383442, guid: a64d35e12f8257645b5e55c62aeda3fd, type: 3}
       propertyPath: m_ApplyRootMotion
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1769276099, guid: a64d35e12f8257645b5e55c62aeda3fd, type: 3}
-      propertyPath: m_Enabled
-      value: 1
+      propertyPath: Damage
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8904323621276722140, guid: a64d35e12f8257645b5e55c62aeda3fd, type: 3}
       propertyPath: attackCooldown
