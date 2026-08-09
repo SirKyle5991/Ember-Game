@@ -54934,11 +54934,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8904323622085547217, guid: a64d35e12f8257645b5e55c62aeda3fd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -9.64
+      value: -9.58
       objectReference: {fileID: 0}
     - target: {fileID: 8904323622085547217, guid: a64d35e12f8257645b5e55c62aeda3fd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.98
+      value: -1.74
       objectReference: {fileID: 0}
     - target: {fileID: 8904323622085547217, guid: a64d35e12f8257645b5e55c62aeda3fd, type: 3}
       propertyPath: m_LocalPosition.z
@@ -54999,6 +54999,10 @@ PrefabInstance:
     - target: {fileID: 8904323622085547230, guid: a64d35e12f8257645b5e55c62aeda3fd, type: 3}
       propertyPath: jumpingPower
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8904323622085547230, guid: a64d35e12f8257645b5e55c62aeda3fd, type: 3}
+      propertyPath: playerAcceleration
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8904323622085547230, guid: a64d35e12f8257645b5e55c62aeda3fd, type: 3}
       propertyPath: groundContactLayers.m_Bits
