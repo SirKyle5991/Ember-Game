@@ -9,6 +9,7 @@ TagManager:
   - Enemy
   - IceWall
   - Fireball
+  - Checkpoint
   layers:
   - Default
   - TransparentFX
@@ -45,4 +46,22 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: back
+    uniqueID: 1320931573
+    locked: 0
+  - name: fog
+    uniqueID: 505327767
+    locked: 0
+  - name: mid
+    uniqueID: 747958289
+    locked: 0
+  - name: entities
+    uniqueID: 1858167711
+    locked: 0
+  - name: front
+    uniqueID: 2844517845
+    locked: 0
+  - name: camera
+    uniqueID: 672254213
     locked: 0

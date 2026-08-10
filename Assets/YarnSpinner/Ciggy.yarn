@@ -1,0 +1,12 @@
+﻿title: Ciggy_Hello
+tags:
+position: -109,-54
+---
+<<if ($Ciggy_Hello is false)>>
+Ciggy: Ey up chuck.
+Ciggy: It's bloody freezin' in ere!
+Ciggy: Tell you what. Seeing as you're so bright, how about you light up this old place!
+<<else>>
+Ciggy: Go get them lights on! You are made of fire aren't you???
+<<endif>>
+===
