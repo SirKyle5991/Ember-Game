@@ -22,6 +22,11 @@ public class GameMenu : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
+
+    public void NextLevel()
+    {
+        SceneManager.LoadScene("Section 1 Floor 1");
+    }
     //public void Volume()
     //{
     //

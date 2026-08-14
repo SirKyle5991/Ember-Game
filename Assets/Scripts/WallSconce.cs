@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,10 +7,13 @@ public class WallSconce : MonoBehaviour
 {
     public GameObject TorchLitPrefab;
     //public Transform spawnPosition;
-    public SconceCounter SC;
-    public static int Scounter = 0;
 
     public bool isLit;
+
+    private void Start()
+    {
+        GameManager.Instance.RegisterSconce(this);
+    }
 
     private void OnTriggerEnter2D(Collider2D col)
     {
@@ -38,8 +42,7 @@ public class WallSconce : MonoBehaviour
         Vector3 objectPosition = transform.position;
         Debug.Log("my objects position is: " + objectPosition);
         Instantiate(TorchLitPrefab, objectPosition, transform.rotation);
-        Scounter++;
-        Debug.Log("Scounter is " + Scounter);
+        GameManager.Instance.OnSconceLit();
         Destroy(gameObject);
         
     }
