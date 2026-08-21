@@ -54,6 +54,11 @@ public class PlayerController : MonoBehaviour
         
         if (isGroundStable)
         {
+            if (!grounded)
+            {
+                anim.ResetTrigger("jump");
+            }
+
             grounded = true;
             remainingJumps = MAX_JUMPS;
         }
@@ -68,6 +73,7 @@ public class PlayerController : MonoBehaviour
         {
             if(grounded || (remainingJumps > 0 && !isRightWallStable && !isLeftWallStable))
             {
+                anim.SetTrigger("jump");
                 body.velocity = new Vector2(body.velocity.x, jumpingPower);
                 remainingJumps--;
                 grounded = false;
@@ -86,6 +92,7 @@ public class PlayerController : MonoBehaviour
         }
 
         isJumping = false;
+        anim.SetBool("grounded", grounded);
     }
 
     public void OnJump()
