@@ -10,6 +10,7 @@ public class Flameburst : MonoBehaviour
     private float Timer = 0.0f;
 
     public float Damage;
+
     
     public void OnTriggerEnter2D(Collider2D collision)
     {
@@ -19,13 +20,11 @@ public class Flameburst : MonoBehaviour
         }
     }
 
-    void Start()
-    {
-        
-    }
-
+    
     void Update()
     {
+
+        
         Timer += Time.deltaTime;
         if (Timer > AttackTime)
         {

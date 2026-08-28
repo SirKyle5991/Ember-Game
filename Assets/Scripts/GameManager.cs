@@ -1,4 +1,6 @@
+using System;
 using System.Collections.Generic;
+using Enemies;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -13,6 +15,8 @@ public class GameManager : MonoBehaviour
 
     public int TotalSconceCount => _registeredSconces.Count;
 
+    private Action OnPlayerDeath;
+
 
     private void Awake()
     {
@@ -25,6 +29,19 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
        
+    }
+
+    public void PlayerDeath()
+    {
+        OnPlayerDeath?.Invoke();
+    }
+
+    public void RegisterEnemy(Enemy enemy)
+    {
+        if (enemy.ShouldRespawn())
+        {
+            OnPlayerDeath += enemy.Health.Respawn;
+        }
     }
 
     public void RegisterSconce(WallSconce sconce)

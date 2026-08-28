@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using Enemies;
 using UnityEngine;
 
-public class Enemy2 : MonoBehaviour
+public class LostSoul : Enemy
 {
     [SerializeField] private float attackCooldown;
     [SerializeField] private float range;
@@ -22,8 +23,14 @@ public class Enemy2 : MonoBehaviour
     public bool isChasing;
     public float chaseDistance;
 
-    private void Awake()
+    public override bool ShouldRespawn()
     {
+        return true;
+    }
+
+    protected override void Awake()
+    {
+        base.Awake();
         anim = GetComponent<Animator>();
         enemyPatrol = GetComponentInParent<EnemyPatrol>();
     }
@@ -38,11 +45,13 @@ public class Enemy2 : MonoBehaviour
             {
                 transform.localScale = new Vector3(1, 1, 1);
                 transform.position += Vector3.left * moveSpeed * Time.deltaTime;
+                anim.SetBool("moving", true);
             }
             if (transform.position.x < playerTransform.position.x)
             {
                 transform.localScale = new Vector3(-1, 1, 1);
                 transform.position += Vector3.right * moveSpeed * Time.deltaTime;
+                anim.SetBool("moving", true);
             }
             if (PlayerInSight())
             {
@@ -59,6 +68,7 @@ public class Enemy2 : MonoBehaviour
         if (Vector2.Distance(transform.position, playerTransform.position) > chaseDistance)
         {
             isChasing = false;
+            anim.SetBool("moving", false);
         }
 
         else

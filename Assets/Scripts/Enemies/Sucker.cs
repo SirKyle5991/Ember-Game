@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using Enemies;
 using UnityEngine;
 
-public class Enemy1 : MonoBehaviour
+public class Sucker : Enemy
 {
     [SerializeField] private float attackCooldown;
     [SerializeField] private float range;
@@ -16,8 +17,14 @@ public class Enemy1 : MonoBehaviour
     private Health playerHealth;
     private EnemyPatrol enemyPatrol;
 
-    private void Awake()
+    public override bool ShouldRespawn()
     {
+        return true;
+    }
+
+    protected override void Awake()
+    {
+        base.Awake();
         anim = GetComponent<Animator>();
         enemyPatrol = GetComponentInParent<EnemyPatrol>();
     }

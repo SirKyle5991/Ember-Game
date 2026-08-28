@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerRespawn : MonoBehaviour
 {
-    private Transform currentCheckpoint;
+    public Transform currentCheckpoint;
     private Health playerHealth;
 
     private void Awake()
@@ -15,14 +15,18 @@ public class PlayerRespawn : MonoBehaviour
     IEnumerator DeathBeforeRespawn()
     {
         //Set to 0 as no animation has been made for it yet
+        Debug.Log(currentCheckpoint);
         yield return new WaitForSeconds(0);
         transform.position = currentCheckpoint.position;
+        Debug.Log(currentCheckpoint);
         playerHealth.Respawn();
+        GameManager.Instance.PlayerDeath();
         Debug.Log("respawn");
     }
 
     public void Respawn()
     {
+        Debug.Log("Death");
         StartCoroutine(DeathBeforeRespawn());
     }
 

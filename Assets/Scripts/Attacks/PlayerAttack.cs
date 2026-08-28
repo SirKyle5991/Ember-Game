@@ -7,6 +7,7 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] private float attackCooldown;
     [SerializeField] private Transform attackspawn;
     [SerializeField] private Projectile fireballPrefab;
+
     //[SerializeField] private GameObject[] Fireball;
     private Animator anim;
     private PlayerController playerController;

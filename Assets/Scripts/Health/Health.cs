@@ -21,6 +21,8 @@ public class Health : MonoBehaviour
     }
     public void TakeDamage(float _damage)
     {
+        Debug.Log("DAMAGE");
+        
         if (dead) return;
         
         currentHealth = Mathf.Clamp(currentHealth - _damage, 0, startingHealth);
@@ -46,20 +48,14 @@ public class Health : MonoBehaviour
         }
     }
 
-    IEnumerator RespawnAfterDelay()
-    {
-        yield return new WaitForSeconds(0);
-        AddHealth(startingHealth);
-        anim.ResetTrigger("die");
-        anim.Play("Idle");
-    }
+
 
     private void Update()
     {
         if (gameObject.CompareTag("Player"))
         {
             if (Input.GetKeyDown(KeyCode.W))
-            TakeDamage(1);
+                TakeDamage(1);
         }
         if (dead == true)
         {
@@ -73,6 +69,9 @@ public class Health : MonoBehaviour
 
     public void Respawn()
     {
-        StartCoroutine(RespawnAfterDelay());
+        AddHealth(startingHealth);
+        gameObject.SetActive(true);
+        anim.ResetTrigger("die");
+        anim.Play("Idle");
     }
 }
