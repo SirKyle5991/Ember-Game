@@ -55413,6 +55413,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: side wall sconce
       objectReference: {fileID: 0}
+    - target: {fileID: 4429202903207382104, guid: b2fe8e63a2476e847bc993610a110c11, type: 3}
+      propertyPath: m_FlipX
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4429202903207382107, guid: b2fe8e63a2476e847bc993610a110c11, type: 3}
       propertyPath: m_RootOrder
       value: 11
