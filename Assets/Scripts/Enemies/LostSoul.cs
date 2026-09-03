@@ -45,20 +45,24 @@ public class LostSoul : Enemy
             {
                 transform.localScale = new Vector3(1, 1, 1);
                 transform.position += Vector3.left * moveSpeed * Time.deltaTime;
-                anim.SetBool("moving", true);
+                //anim.SetBool("moving", true);
             }
             if (transform.position.x < playerTransform.position.x)
             {
                 transform.localScale = new Vector3(-1, 1, 1);
                 transform.position += Vector3.right * moveSpeed * Time.deltaTime;
-                anim.SetBool("moving", true);
+                //anim.SetBool("moving", true);
             }
             if (PlayerInSight())
             {
+                Debug.Log("the player is in sight");
                 if (cooldownTimer >= attackCooldown)
                 {
                     cooldownTimer = 0;
+                    DamagePlayer();
                     anim.SetTrigger("hug");
+                    Debug.Log("lost soul is hugging");
+                    //playerHealth.TakeDamage(damage);
                 }
             }
             if (enemyPatrol != null)
@@ -77,8 +81,6 @@ public class LostSoul : Enemy
             {
                 isChasing = true;
             }
-
-            anim.SetTrigger("Idle");
         }
 
         //attack only when player in sight?

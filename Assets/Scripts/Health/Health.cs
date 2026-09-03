@@ -40,11 +40,12 @@ public class Health : MonoBehaviour
 
     IEnumerator DeathAfterDelay()
     {
-        yield return new WaitForSeconds(0.9f);
+        yield return new WaitForSeconds(3f);
         gameObject.SetActive(false);
         if (gameObject.CompareTag("Player"))
         {
             gameObject.SetActive(true);
+            GetComponent<PlayerController>().enabled = true;
         }
     }
 

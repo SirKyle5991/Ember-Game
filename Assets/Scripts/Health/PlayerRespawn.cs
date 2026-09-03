@@ -16,7 +16,8 @@ public class PlayerRespawn : MonoBehaviour
     {
         //Set to 0 as no animation has been made for it yet
         Debug.Log(currentCheckpoint);
-        yield return new WaitForSeconds(0);
+        GetComponent<PlayerController>().enabled = false;
+        yield return new WaitForSeconds(2);
         transform.position = currentCheckpoint.position;
         Debug.Log(currentCheckpoint);
         playerHealth.Respawn();
