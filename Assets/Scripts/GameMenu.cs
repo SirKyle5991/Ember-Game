@@ -31,4 +31,11 @@ public class GameMenu : MonoBehaviour
     //{
     //
     //}
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Menu();
+        }
+    }
 }

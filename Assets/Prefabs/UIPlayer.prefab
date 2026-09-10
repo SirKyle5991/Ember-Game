@@ -332,7 +332,7 @@ GameObject:
   - component: {fileID: 806987203672006955}
   - component: {fileID: 3914561543462854195}
   m_Layer: 5
-  m_Name: UICanvas
+  m_Name: UIPlayer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -354,7 +354,7 @@ RectTransform:
   - {fileID: 6865010675031906432}
   - {fileID: 1480775494}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
