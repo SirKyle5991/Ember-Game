@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 00f786b6aff94514cb70439cefc2b0ab
+guid: 0184ee75100dbab41a6f1b2bcd5c7069
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -122,7 +122,7 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: PillarTilemaps
+  - name: PillarTilemapsColourMatch
     originalName: 
     pivot: {x: 0.5, y: 0}
     alignment: 9
@@ -131,9 +131,9 @@ ScriptedImporter:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 96
-      height: 96
-    spriteID: f20b18e29e97b714a8e77c1c56c450ec
+      width: 128
+      height: 128
+    spriteID: e5ce05f12277f8843a3243267a7253fe
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -146,25 +146,25 @@ ScriptedImporter:
   asepriteLayers:
   - layerIndex: 0
     uuid:
-      value0: 1257002745
+      value0: 105795938
       value1: 0
       value2: 0
       value3: 0
     guid: 0
-    name: PillarTilemaps
+    name: PillarTilemapsColourMatch
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: PillarTilemaps
+    - name: PillarTilemapsColourMatch
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
-        width: 96
-        height: 96
-      spriteId: f20b18e29e97b714a8e77c1c56c450ec
+        width: 128
+        height: 128
+      spriteId: e5ce05f12277f8843a3243267a7253fe
     linkedCells: []
     parentIndex: -1
   platformSettings:
@@ -182,5 +182,5 @@ ScriptedImporter:
   generatePhysicsShape: 0
   secondarySpriteTextures: []
   spritePackingTag: 
-  canvasSize: {x: 96, y: 96}
-  previousTextureSize: {x: 128, y: 128}
+  canvasSize: {x: 128, y: 128}
+  previousTextureSize: {x: 256, y: 256}
