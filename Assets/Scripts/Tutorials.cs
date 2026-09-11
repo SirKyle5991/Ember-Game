@@ -7,14 +7,22 @@ public class Tutorials : MonoBehaviour
     // Start is called before the first frame update
     public GameObject TutorialActivate;
 
+    IEnumerator DeathAfterDelay()
+    {
+        yield return new WaitForSeconds(3f);
+        TutorialActivate.SetActive(false);
+        if (gameObject.CompareTag("TutorialActivate"))
+        {
+            gameObject.SetActive(true);
+        }
+    }
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        //if (Input.GetKeyDown(KeyCode.E))
         {
             Debug.Log("duuuuh");
             TutorialActivate.SetActive(true);
-            //WaitForSeconds(3f);
-            //TutorialActivate.SetActive(false);
+            StartCoroutine(DeathAfterDelay());
         }
     }
 }

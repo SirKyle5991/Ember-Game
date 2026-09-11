@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private LayerMask groundContactLayers;
     [SerializeField] float jumpingPower = 4f;
     [SerializeField] private float playerAcceleration = 10;
+    [SerializeField] private PlayerInput input;
     private Rigidbody2D body;
     private Animator anim;
     private BoxCollider2D playerCollisionBounds;
@@ -27,12 +29,21 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] private int remainingJumps = 2;
 
+
+    private InputAction playerHorizontal;
+    private InputAction playerDash;
+    private InputAction playerJump;
     private void Awake()
     {
         // grab references for rigidBody and animator for the object
         body = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         playerCollisionBounds = GetComponent<BoxCollider2D>();
+
+        var actionMap = input.actions.FindActionMap("Player Controls"); //ask for the action map
+        playerHorizontal = actionMap.FindAction("Horizontal"); //ask for a specific action
+        playerDash = actionMap.FindAction("Dash");
+        playerJump = actionMap.FindAction("Jump");
     }
 
     private void FixedUpdate()
@@ -94,11 +105,7 @@ public class PlayerController : MonoBehaviour
         isJumping = false;
         anim.SetBool("grounded", grounded);
     }
-
-    public void OnJump()
-    {
-        isJumping = true;
-    }
+    
 
 
     
@@ -108,10 +115,12 @@ public class PlayerController : MonoBehaviour
         {
             return;
         }
+
         
-        
-        horizontalInput = Input.GetAxis("Horizontal");
-        
+        horizontalInput = playerHorizontal.ReadValue<float>(); //read a axis action
+
+        if (playerJump.WasPerformedThisFrame()) //read a button action
+            isJumping = true;
 
         //flips the player when moving left and right
         if (horizontalInput > 0.01f)
@@ -124,7 +133,7 @@ public class PlayerController : MonoBehaviour
         //set animator parameters
         anim.SetBool("Run", horizontalInput != 0);
 
-        if (Input.GetKeyDown(KeyCode.LeftShift) && canDash)
+        if (playerDash.WasPerformedThisFrame() && canDash)
         {
             StartCoroutine(Dash());
         }
