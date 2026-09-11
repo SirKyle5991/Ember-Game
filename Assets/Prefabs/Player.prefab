@@ -349,6 +349,7 @@ MonoBehaviour:
     m_Bits: 1
   jumpingPower: 5
   playerAcceleration: 10
+  input: {fileID: 6893660505450421270}
   grounded: 0
   remainingJumps: 2
 --- !u!114 &8904323621276722134
