@@ -7,7 +7,7 @@ public class MainMenu : MonoBehaviour
 {
     public void PlayGame()
     {
-        SceneManager.LoadSceneAsync("Actual Castle");
+        SceneManager.LoadSceneAsync("Tutorial");
     }
 
     public void QuitGame()
