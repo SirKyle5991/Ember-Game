@@ -32516,7 +32516,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4847373784864088201, guid: 00c85aea2ed5218459627605816b1e43, type: 3}
       propertyPath: m_Name
-      value: UIPlayer
+      value: PlayerHud
       objectReference: {fileID: 0}
     - target: {fileID: 5414671691965704372, guid: 00c85aea2ed5218459627605816b1e43, type: 3}
       propertyPath: playerHealth
