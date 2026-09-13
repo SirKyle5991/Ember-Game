@@ -74,6 +74,17 @@
                 },
                 {
                     "name": "",
+                    "id": "07d1fd19-763d-442e-8d1d-5d3bf0b58474",
+                    "path": "<DualShockGamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "f8e73546-9802-4b79-8daa-50558fe0ff26",
                     "path": "<Keyboard>/c",
                     "interactions": "",
@@ -137,6 +148,17 @@
                     "action": "Horizontal",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "4fac82c4-3b3f-418a-bef7-88da3ae8a994",
+                    "path": "<Joystick>/stick/x",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Horizontal",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 },
                 {
                     "name": "",

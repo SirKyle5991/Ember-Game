@@ -9,7 +9,7 @@ public class Tutorials : MonoBehaviour
 
     IEnumerator DeathAfterDelay()
     {
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(10f);
         TutorialActivate.SetActive(false);
         if (gameObject.CompareTag("TutorialActivate"))
         {
