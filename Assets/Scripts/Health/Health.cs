@@ -34,6 +34,7 @@ public class Health : MonoBehaviour
         else
         {
             anim.SetTrigger("die");
+            GetComponent<EnemyPatrol>().enabled = false;
             onDeath.Invoke();
         }
     }
