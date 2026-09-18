@@ -34,14 +34,13 @@ public class Health : MonoBehaviour
         else
         {
             anim.SetTrigger("die");
-            GetComponent<EnemyPatrol>().enabled = false;
             onDeath.Invoke();
         }
     }
 
     IEnumerator DeathAfterDelay()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(3f);
         gameObject.SetActive(false);
         if (gameObject.CompareTag("Player"))
         {
