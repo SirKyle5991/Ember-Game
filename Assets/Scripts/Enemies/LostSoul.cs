@@ -58,6 +58,7 @@ public class LostSoul : Enemy
                 Debug.Log("the player is in sight");
                 if (cooldownTimer >= attackCooldown)
                 {
+                    isChasing = false;
                     cooldownTimer = 0;
                     DamagePlayer();
                     anim.SetTrigger("hug");

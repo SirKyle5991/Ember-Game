@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4429202903207382105}
   - component: {fileID: 4429202903207382106}
   m_Layer: 0
-  m_Name: side wall sconce
+  m_Name: LeftWallSconce
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

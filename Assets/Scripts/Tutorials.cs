@@ -7,7 +7,7 @@ public class Tutorials : MonoBehaviour
     // Start is called before the first frame update
     public GameObject TutorialActivate;
 
-    IEnumerator DeathAfterDelay()
+    IEnumerator TutorialDelay()
     {
         yield return new WaitForSeconds(10f);
         TutorialActivate.SetActive(false);
@@ -22,7 +22,7 @@ public class Tutorials : MonoBehaviour
         {
             Debug.Log("duuuuh");
             TutorialActivate.SetActive(true);
-            StartCoroutine(DeathAfterDelay());
+            StartCoroutine(TutorialDelay());
         }
     }
 }

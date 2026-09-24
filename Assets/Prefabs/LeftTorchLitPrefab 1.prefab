@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8449979122309914059}
   - component: {fileID: 3311379409057406318}
   m_Layer: 0
-  m_Name: SideTorchLitPrefab 1
+  m_Name: LeftTorchLitPrefab 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
