@@ -46,6 +46,11 @@ public class PlayerController : MonoBehaviour
         playerJump = actionMap.FindAction("Jump");
     }
 
+    private void Start()
+    {
+        GameManager.Instance.RegisterPlayer(this);
+    }
+
     private void FixedUpdate()
     {
         var playerHorizontalMovement = Mathf.MoveTowards(body.velocity.x, horizontalInput * speed,

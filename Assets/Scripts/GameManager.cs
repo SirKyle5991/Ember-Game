@@ -17,6 +17,8 @@ public class GameManager : MonoBehaviour
 
     private Action OnPlayerDeath;
 
+    public GameObject Player { get; private set; }
+
 
     private void Awake()
     {
@@ -42,6 +44,11 @@ public class GameManager : MonoBehaviour
         {
             OnPlayerDeath += enemy.Health.Respawn;
         }
+    }
+
+    public void RegisterPlayer(PlayerController player)
+    {
+        Player = player.gameObject;
     }
 
     public void RegisterSconce(WallSconce sconce)

@@ -16,7 +16,7 @@ public class Tutorials : MonoBehaviour
             gameObject.SetActive(true);
         }
     }
-    private void OnTriggerEnter2D(Collider2D col)
+    private void OnTriggerStay2D(Collider2D col)
     {
         //if (Input.GetKeyDown(KeyCode.E))
         {

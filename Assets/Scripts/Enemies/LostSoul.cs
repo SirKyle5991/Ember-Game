@@ -1,7 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Enemies;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class LostSoul : Enemy
 {
@@ -16,12 +18,14 @@ public class LostSoul : Enemy
     private Animator anim;
     private Health playerHealth;
     private EnemyPatrol enemyPatrol;
+    private LostSoulState _currentState = LostSoulState.IDLE;
 
     [SerializeField] private float moveSpeed;
 
     public Transform playerTransform;
     public bool isChasing;
-    public float chaseDistance;
+    public float attackDistance = 1;
+    public float maximumChaseDistance = 4;
 
     public override bool ShouldRespawn()
     {
@@ -39,89 +43,87 @@ public class LostSoul : Enemy
     {
         cooldownTimer += Time.deltaTime;
 
-        if (isChasing)
+        if (Vector2.Distance(transform.position, playerTransform.position) > maximumChaseDistance)
         {
-            if(transform.position.x > playerTransform.position.x)
-            {
-                transform.localScale = new Vector3(1, 1, 1);
-                transform.position += Vector3.left * moveSpeed * Time.deltaTime;
-                //anim.SetBool("moving", true);
-            }
-            if (transform.position.x < playerTransform.position.x)
-            {
-                transform.localScale = new Vector3(-1, 1, 1);
-                transform.position += Vector3.right * moveSpeed * Time.deltaTime;
-                //anim.SetBool("moving", true);
-            }
-            if (PlayerInSight())
-            {
-                Debug.Log("the player is in sight");
-                if (cooldownTimer >= attackCooldown)
-                {
-                    isChasing = false;
-                    cooldownTimer = 0;
-                    DamagePlayer();
-                    anim.SetTrigger("hug");
-                    Debug.Log("lost soul is hugging");
-                    //playerHealth.TakeDamage(damage);
-                }
-            }
-            if (enemyPatrol != null)
-                enemyPatrol.enabled = !PlayerInSight();
+            _currentState = LostSoulState.IDLE;
         }
-        
-        if (Vector2.Distance(transform.position, playerTransform.position) > chaseDistance)
-        {
-            isChasing = false;
-            anim.SetBool("moving", false);
-        }
-
         else
         {
-            if (Vector2.Distance(transform.position, playerTransform.position) < chaseDistance)
+            if(Vector2.Distance(transform.position, playerTransform.position) > attackDistance)
             {
-                isChasing = true;
+                _currentState = LostSoulState.CHASE;
+            }
+            else
+            {
+                _currentState = LostSoulState.ATTACK;
             }
         }
 
-        //attack only when player in sight?
-        //if (PlayerInSight())
-        //{
-        //    if (cooldownTimer >= attackCooldown)
-        //    {
-        //        cooldownTimer = 0;
-        //        anim.SetTrigger("hug");
-        //    }
-        //}
-        //if (enemyPatrol != null)
-        //    enemyPatrol.enabled = !PlayerInSight();
+        switch (_currentState)
+        {
+            case LostSoulState.IDLE:
+                DoIdle();
+                break;
+            case LostSoulState.CHASE:
+                DoChase();
+                break;
+            case LostSoulState.ATTACK:
+                DoAttack();
+                break;
+            default:
+                throw new ArgumentOutOfRangeException();
+        }
+
     }
 
-    private bool PlayerInSight()
+    private void DoIdle()
     {
-        RaycastHit2D hit =
-            Physics2D.BoxCast(boxCollider.bounds.center + transform.right * range * transform.localScale.x * colliderDistance,
-            new Vector3(boxCollider.bounds.size.x * range, boxCollider.bounds.size.y, boxCollider.bounds.size.z),
-            0, Vector2.left, 0, playerLayer);
+        anim.SetBool("moving", false);
+    }
 
+    private void DoChase()
+    {
+        if(transform.position.x > playerTransform.position.x)
+        {
+            transform.localScale = new Vector3(1, 1, 1);
+            transform.position += Vector3.left * moveSpeed * Time.deltaTime;
+            anim.SetBool("moving", true);
+        }
+        if (transform.position.x < playerTransform.position.x)
+        {
+            transform.localScale = new Vector3(-1, 1, 1);
+            transform.position += Vector3.right * moveSpeed * Time.deltaTime;
+            anim.SetBool("moving", true);
+        }
+    }
 
-        if (hit.collider != null)
-            playerHealth = hit.transform.GetComponent<Health>();
-
-        return hit.collider != null;
+    private void DoAttack()
+    {
+        Debug.Log("the player is in sight");
+        if (cooldownTimer >= attackCooldown)
+        {
+            isChasing = false;
+            cooldownTimer = 0;
+            anim.SetTrigger("hug");
+            Debug.Log("lost soul is hugging");
+            GameManager.Instance.Player.GetComponent<Health>().TakeDamage(damage);
+        }
     }
 
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawWireCube(boxCollider.bounds.center + transform.right * range * transform.localScale.x * colliderDistance,
-            new Vector3(boxCollider.bounds.size.x * range, boxCollider.bounds.size.y, boxCollider.bounds.size.z));
+        Gizmos.DrawWireSphere(transform.position, attackDistance);
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(transform.position, maximumChaseDistance);
     }
 
-    private void DamagePlayer()
+
+    public enum LostSoulState
     {
-        //If player still in range damage him
-        if (PlayerInSight())
-            playerHealth.TakeDamage(damage);
+        IDLE,
+        CHASE,
+        ATTACK
     }
+    
 }

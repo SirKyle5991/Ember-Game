@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 5284852609225937080}
   - component: {fileID: 5284852609225937087}
   m_Layer: 0
-  m_Name: EnemyPatrol
+  m_Name: Sucker2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -64,7 +64,7 @@ Transform:
   - {fileID: 5284852610649526252}
   - {fileID: 5284852610412718598}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5284852609225937087
 MonoBehaviour:
@@ -177,7 +177,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6673002948631064294, guid: 0733e2844be1aba4ab21b7da04fca1f7, type: 3}
       propertyPath: m_Name
-      value: LostSoul
+      value: Sucker
       objectReference: {fileID: 0}
     - target: {fileID: 6673002948631064295, guid: 0733e2844be1aba4ab21b7da04fca1f7, type: 3}
       propertyPath: m_Size.y

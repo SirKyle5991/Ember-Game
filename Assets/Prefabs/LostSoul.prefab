@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6673002948631064295}
   - component: {fileID: 6673002948631064316}
   - component: {fileID: 6673002948631064291}
-  - component: {fileID: 6673002948631064290}
+  - component: {fileID: 6941696093142681318}
   m_Layer: 0
   m_Name: LostSoul
   m_TagString: Enemy
@@ -34,7 +34,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: -2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6673002948631064288
 SpriteRenderer:
@@ -146,13 +146,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92bb2a094852e254fb10db081c9ee5f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingHealth: 3
+  startingHealth: 200
   anim: {fileID: 0}
   invulnerable: 0
   onDeath:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6673002948631064290}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
         m_MethodName: set_enabled
         m_Mode: 6
@@ -164,7 +164,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &6673002948631064290
+--- !u!114 &6941696093142681318
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -173,14 +173,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 6673002948631064294}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d51dc25c16946fc45b9ff4c511a7ff98, type: 3}
+  m_Script: {fileID: 11500000, guid: 443850a4d73c01b45a08e2dacaae4ead, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Health: {fileID: 0}
   attackCooldown: 1
-  range: 1.14
-  colliderDistance: 0.9
-  damage: 2
+  range: 2
+  colliderDistance: 0.01
+  damage: 1
   boxCollider: {fileID: 6673002948631064295}
   playerLayer:
     serializedVersion: 2
     m_Bits: 8
+  moveSpeed: 1
+  playerTransform: {fileID: 0}
+  isChasing: 0
+  chaseDistance: 4
