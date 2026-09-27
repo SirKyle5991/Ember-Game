@@ -15,6 +15,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Tutorial.unity
     guid: 2546358db296a164dada58ee50a0cfe4
   - enabled: 1
-    path: Assets/Scenes/Actual Castle.unity
+    path: Assets/Scenes/Jungle.unity
     guid: 7c3528fdf3ae8dd498db6fea66d5322d
   m_configObjects: {}
