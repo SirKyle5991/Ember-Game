@@ -105,6 +105,17 @@
                 },
                 {
                     "name": "",
+                    "id": "eccb244b-c520-4875-80a2-c112cf0f1e56",
+                    "path": "<DualShockGamepad>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Fireball",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "d64973aa-485e-43b3-abb6-6524d2026283",
                     "path": "<Keyboard>/x",
                     "interactions": "",
@@ -116,8 +127,30 @@
                 },
                 {
                     "name": "",
+                    "id": "c4406de2-f41b-40d8-b5b9-32d9f281592e",
+                    "path": "<DualShockGamepad>/buttonNorth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Flameburst",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "6a83278d-960b-4256-af69-dcbced8d0ae5",
                     "path": "<Keyboard>/shift",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Dash",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a20f2dd2-e240-4fc3-a59a-04e3fad58505",
+                    "path": "<DualShockGamepad>/rightShoulder",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -171,8 +204,30 @@
                 },
                 {
                     "name": "",
+                    "id": "b3d267f9-5df8-4f56-9dca-5e978978baf8",
+                    "path": "<DualShockGamepad>/leftStick/x",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Horizontal",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "1ec3c192-1218-4199-8fa2-00a2601b03cf",
                     "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "GameMenu",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d80243ef-6f4b-4bdb-bfaa-9a55afe67885",
+                    "path": "<DualShockGamepad>/start",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

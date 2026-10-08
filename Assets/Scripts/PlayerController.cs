@@ -33,6 +33,9 @@ public class PlayerController : MonoBehaviour
     private InputAction playerHorizontal;
     private InputAction playerDash;
     private InputAction playerJump;
+    private InputAction playerFireball;
+    private InputAction playerFlameburst;
+    private InputAction playerGameMenu;
     private void Awake()
     {
         // grab references for rigidBody and animator for the object
@@ -44,6 +47,9 @@ public class PlayerController : MonoBehaviour
         playerHorizontal = actionMap.FindAction("Horizontal"); //ask for a specific action
         playerDash = actionMap.FindAction("Dash");
         playerJump = actionMap.FindAction("Jump");
+        playerFireball = actionMap.FindAction("Fireball");
+        playerFlameburst = actionMap.FindAction("Flameburst");
+        playerGameMenu = actionMap.FindAction("GameMenu");
     }
 
     private void Start()
