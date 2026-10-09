@@ -101247,6 +101247,18 @@ PrefabInstance:
       propertyPath: m_TargetGraphic
       value: 
       objectReference: {fileID: 1845509007}
+    - target: {fileID: 7126899022137230814, guid: 9103dc0ec3c15e84eba11d105c09c666, type: 3}
+      propertyPath: m_Colors.m_SelectedColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7126899022137230814, guid: 9103dc0ec3c15e84eba11d105c09c666, type: 3}
+      propertyPath: m_Colors.m_SelectedColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7126899022137230814, guid: 9103dc0ec3c15e84eba11d105c09c666, type: 3}
+      propertyPath: m_Colors.m_SelectedColor.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7126899022197246469, guid: 9103dc0ec3c15e84eba11d105c09c666, type: 3}
       propertyPath: m_Color.a
       value: 0
@@ -101255,6 +101267,18 @@ PrefabInstance:
       propertyPath: m_TargetGraphic
       value: 
       objectReference: {fileID: 1964513568}
+    - target: {fileID: 7126899022197246474, guid: 9103dc0ec3c15e84eba11d105c09c666, type: 3}
+      propertyPath: m_Colors.m_SelectedColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7126899022197246474, guid: 9103dc0ec3c15e84eba11d105c09c666, type: 3}
+      propertyPath: m_Colors.m_SelectedColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7126899022197246474, guid: 9103dc0ec3c15e84eba11d105c09c666, type: 3}
+      propertyPath: m_Colors.m_SelectedColor.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7126899022443035245, guid: 9103dc0ec3c15e84eba11d105c09c666, type: 3}
       propertyPath: m_fontAsset
       value: 
@@ -101287,6 +101311,18 @@ PrefabInstance:
       propertyPath: m_TargetGraphic
       value: 
       objectReference: {fileID: 1658235698}
+    - target: {fileID: 7126899022594706480, guid: 9103dc0ec3c15e84eba11d105c09c666, type: 3}
+      propertyPath: m_Colors.m_SelectedColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7126899022594706480, guid: 9103dc0ec3c15e84eba11d105c09c666, type: 3}
+      propertyPath: m_Colors.m_SelectedColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7126899022594706480, guid: 9103dc0ec3c15e84eba11d105c09c666, type: 3}
+      propertyPath: m_Colors.m_SelectedColor.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7126899022594706480, guid: 9103dc0ec3c15e84eba11d105c09c666, type: 3}
       propertyPath: m_Colors.m_HighlightedColor.b
       value: 0
@@ -101427,6 +101463,18 @@ PrefabInstance:
       propertyPath: m_TargetGraphic
       value: 
       objectReference: {fileID: 616184191}
+    - target: {fileID: 7126899023091680934, guid: 9103dc0ec3c15e84eba11d105c09c666, type: 3}
+      propertyPath: m_Colors.m_SelectedColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7126899023091680934, guid: 9103dc0ec3c15e84eba11d105c09c666, type: 3}
+      propertyPath: m_Colors.m_SelectedColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7126899023091680934, guid: 9103dc0ec3c15e84eba11d105c09c666, type: 3}
+      propertyPath: m_Colors.m_SelectedColor.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7126899023091680934, guid: 9103dc0ec3c15e84eba11d105c09c666, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -123405,6 +123453,10 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8904323621276722140, guid: a64d35e12f8257645b5e55c62aeda3fd, type: 3}
+      propertyPath: attackCooldown
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 8904323622085547216, guid: a64d35e12f8257645b5e55c62aeda3fd, type: 3}
       propertyPath: m_Size.x
       value: 0.96875
@@ -123464,6 +123516,10 @@ PrefabInstance:
     - target: {fileID: 8904323622085547223, guid: a64d35e12f8257645b5e55c62aeda3fd, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 8904323622085547230, guid: a64d35e12f8257645b5e55c62aeda3fd, type: 3}
+      propertyPath: input
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []

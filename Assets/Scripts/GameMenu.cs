@@ -1,25 +1,39 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
 public class GameMenu : MonoBehaviour
 {
     [SerializeField] GameObject gameMenu;
-    public void Menu()
+    
+    private InputAction playerGameMenu;
+
+    public void Start()
     {
-        gameMenu.SetActive(true);
+        var actionMap = GameManager.Instance.Input.actions.FindActionMap("Player Controls"); //ask for the action map
+        playerGameMenu = actionMap.FindAction("GameMenu");
+    }
+
+    public void ToggleMenu()
+    {
+        gameMenu.SetActive(!gameMenu.activeInHierarchy);
+        GameManager.Instance.SetPaused(gameMenu.activeInHierarchy);
     }
     public void MainMenu()
     {
+        GameManager.Instance.SetPaused(false);
         SceneManager.LoadScene("Main Menu");
     }
     public void Resume()
     {
-        gameMenu.SetActive(false);
+        ToggleMenu();
     }
     public void Restart()
     {
+        GameManager.Instance.SetPaused(false);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
@@ -33,9 +47,9 @@ public class GameMenu : MonoBehaviour
     //}
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (playerGameMenu.WasPerformedThisFrame())
         {
-            Menu();
+            ToggleMenu();
         }
     }
 }

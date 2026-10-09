@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Flameburst : MonoBehaviour
 {
@@ -12,6 +14,14 @@ public class Flameburst : MonoBehaviour
     public float Damage;
 
     
+    private InputAction playerFlameburst;
+    
+    private void Start()
+    {
+        var actionMap = GameManager.Instance.Input.actions.FindActionMap("Player Controls"); //ask for the action map
+        playerFlameburst = actionMap.FindAction("Flameburst");
+    }
+
     public void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Enemy")
@@ -33,7 +43,7 @@ public class Flameburst : MonoBehaviour
         }
         if (AOE.activeSelf != true)
         {
-            if (Input.GetKeyDown(KeyCode.X))
+            if (playerFlameburst.WasPerformedThisFrame())
             {
                 Debug.Log("x key was pressed");
                 AOE.SetActive(true);

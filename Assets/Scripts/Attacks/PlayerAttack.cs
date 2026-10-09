@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerAttack : MonoBehaviour
 {
@@ -12,19 +13,23 @@ public class PlayerAttack : MonoBehaviour
     private Animator anim;
     private PlayerController playerController;
     private float cooldownTimer = Mathf.Infinity;
+    
+    private InputAction playerFireball;
 
     //private int Health currentHealth;
     //private bool CanAttack => currentHealth > 2;
 
-    private void Awake()
+    private void Start()
     {
+        var actionMap = GameManager.Instance.Input.actions.FindActionMap("Player Controls"); //ask for the action map
+        playerFireball = actionMap.FindAction("Fireball");
         anim = GetComponent<Animator>();
         playerController = GetComponent<PlayerController>();
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.C) && cooldownTimer > attackCooldown)
+        if (playerFireball.WasPerformedThisFrame() && cooldownTimer > attackCooldown)
         {
             Attack();
         }

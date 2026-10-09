@@ -12,7 +12,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private LayerMask groundContactLayers;
     [SerializeField] float jumpingPower = 4f;
     [SerializeField] private float playerAcceleration = 10;
-    [SerializeField] private PlayerInput input;
     private Rigidbody2D body;
     private Animator anim;
     private BoxCollider2D playerCollisionBounds;
@@ -34,7 +33,6 @@ public class PlayerController : MonoBehaviour
     private InputAction playerDash;
     private InputAction playerJump;
     private InputAction playerFireball;
-    private InputAction playerFlameburst;
     private InputAction playerGameMenu;
     private void Awake()
     {
@@ -43,17 +41,18 @@ public class PlayerController : MonoBehaviour
         anim = GetComponent<Animator>();
         playerCollisionBounds = GetComponent<BoxCollider2D>();
 
-        var actionMap = input.actions.FindActionMap("Player Controls"); //ask for the action map
-        playerHorizontal = actionMap.FindAction("Horizontal"); //ask for a specific action
-        playerDash = actionMap.FindAction("Dash");
-        playerJump = actionMap.FindAction("Jump");
-        playerFireball = actionMap.FindAction("Fireball");
-        playerFlameburst = actionMap.FindAction("Flameburst");
-        playerGameMenu = actionMap.FindAction("GameMenu");
+        
     }
 
     private void Start()
     {
+        var actionMap = GameManager.Instance.Input.actions.FindActionMap("Player Controls"); //ask for the action map
+        playerHorizontal = actionMap.FindAction("Horizontal"); //ask for a specific action
+        playerDash = actionMap.FindAction("Dash");
+        playerJump = actionMap.FindAction("Jump");
+        playerFireball = actionMap.FindAction("Fireball");
+        
+        playerGameMenu = actionMap.FindAction("GameMenu");
         GameManager.Instance.RegisterPlayer(this);
     }
 

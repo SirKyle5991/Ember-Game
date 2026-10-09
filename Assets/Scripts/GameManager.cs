@@ -2,10 +2,13 @@ using System;
 using System.Collections.Generic;
 using Enemies;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
+
+    [field:SerializeField] public PlayerInput Input { get; private set; }
 
     [SerializeField] GameObject victoryMenu;
     
@@ -65,6 +68,15 @@ public class GameManager : MonoBehaviour
             victoryMenu.SetActive(true);
             Debug.Log("ALL SCONCES LIT");
         }
+    }
+
+    public void SetPaused(bool isPaused)
+    {
+        Time.timeScale = isPaused ? 0 : 1;
+        if(isPaused)
+            Input.actions.FindActionMap("Player Controls").Disable();
+        else
+            Input.actions.FindActionMap("Player Controls").Enable();
     }
 
 }
