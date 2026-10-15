@@ -192,7 +192,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6996048944679724455}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -0.007, y: 0.131, z: -0.025400808}
+  m_LocalPosition: {x: -0.007, y: 0.331, z: -0.025400808}
   m_LocalScale: {x: 1, y: 1, z: 1.0375}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5024,7 +5024,7 @@ Transform:
   - {fileID: 1291776669}
   - {fileID: 1599079540044013529}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &8904323622085547216
 SpriteRenderer:
@@ -5072,7 +5072,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 2}
+  m_Size: {x: 0.96875, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 0
@@ -5163,7 +5163,6 @@ MonoBehaviour:
     m_Bits: 1
   jumpingPower: 5
   playerAcceleration: 10
-  input: {fileID: 0}
   grounded: 0
   remainingJumps: 2
 --- !u!114 &8904323621276722134
@@ -5208,7 +5207,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bf731ccae9c5e74aa67bcb6b686ad40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackCooldown: 1
+  attackCooldown: 2
   attackspawn: {fileID: 201968255}
   fireballPrefab: {fileID: 5779991223254085366, guid: 1613cac0e0f6cbc449b33682be8c104a, type: 3}
 --- !u!114 &1769276099
