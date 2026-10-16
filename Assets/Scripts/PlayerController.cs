@@ -6,12 +6,13 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
-    private const int MAX_JUMPS = 2;
+    private const int MAX_AIR_JUMPS = 1;
     
     [SerializeField] private float speed;
     [SerializeField] private LayerMask groundContactLayers;
     [SerializeField] float jumpingPower = 4f;
     [SerializeField] private float playerAcceleration = 10;
+    [SerializeField] private int maxCoyoteFrames = 3;
     private Rigidbody2D body;
     private Animator anim;
     private BoxCollider2D playerCollisionBounds;
@@ -25,8 +26,10 @@ public class PlayerController : MonoBehaviour
     private float dashingTime = 0.2f;
     private float dashingCooldown = 3f;
     private float horizontalInput;
+    [SerializeField] private int framesSinceGrounded;
 
-    [SerializeField] private int remainingJumps = 2;
+
+    [SerializeField] private int remainingAirJumps = 2;
 
 
     private InputAction playerHorizontal;
@@ -63,13 +66,13 @@ public class PlayerController : MonoBehaviour
         
         body.velocity = new Vector2(playerHorizontalMovement, body.velocity.y);
         
-        var groundHit = Physics2D.BoxCast((Vector2)transform.position + playerCollisionBounds.offset, playerCollisionBounds.size * 0.95f, 0, Vector2.down, 0.05f, layerMask:groundContactLayers);
+        var groundHit = Physics2D.BoxCast((Vector2)transform.position + playerCollisionBounds.offset, playerCollisionBounds.size * 0.95f, 0, Vector2.down, 0.05f, groundContactLayers);
         var isGroundStable = groundHit && !groundHit.collider.isTrigger && groundHit.distance < playerCollisionBounds.size.y / 2f + float.Epsilon;
         
-        var leftWallHit = Physics2D.BoxCast((Vector2)transform.position + playerCollisionBounds.offset, playerCollisionBounds.size * 0.95f, 0, Vector2.left, 0.05f, layerMask:groundContactLayers);
+        var leftWallHit = Physics2D.BoxCast((Vector2)transform.position + playerCollisionBounds.offset, playerCollisionBounds.size * 0.95f, 0, Vector2.left, 0.05f, groundContactLayers);
         var isLeftWallStable = leftWallHit && !leftWallHit.collider.isTrigger && leftWallHit.distance < playerCollisionBounds.size.x / 2f + float.Epsilon;
         
-        var rightWallHit = Physics2D.BoxCast((Vector2)transform.position + playerCollisionBounds.offset, playerCollisionBounds.size * 0.95f, 0, Vector2.right, 0.05f, layerMask:groundContactLayers);
+        var rightWallHit = Physics2D.BoxCast((Vector2)transform.position + playerCollisionBounds.offset, playerCollisionBounds.size * 0.95f, 0, Vector2.right, 0.05f, groundContactLayers);
         var isRightWallStable = rightWallHit && !rightWallHit.collider.isTrigger && rightWallHit.distance < playerCollisionBounds.size.x / 2f + float.Epsilon;
 
         
@@ -81,22 +84,25 @@ public class PlayerController : MonoBehaviour
             }
 
             grounded = true;
-            remainingJumps = MAX_JUMPS;
+            remainingAirJumps = MAX_AIR_JUMPS;
+            framesSinceGrounded = 0;
         }
         else
         {
             grounded = false;
+            framesSinceGrounded++;
         }
 
-        
+        var canGroundJump = grounded || framesSinceGrounded <= maxCoyoteFrames;
         
         if (isJumping)
         {
-            if(grounded || (remainingJumps > 0 && !isRightWallStable && !isLeftWallStable))
+            if(canGroundJump || (remainingAirJumps > 0 && !isRightWallStable && !isLeftWallStable))
             {
                 anim.SetTrigger("jump");
                 body.velocity = new Vector2(body.velocity.x, jumpingPower);
-                remainingJumps--;
+                if(!canGroundJump)
+                    remainingAirJumps--;
                 grounded = false;
             }
             else
