@@ -5082,7 +5082,7 @@ Transform:
   - {fileID: 1291776669}
   - {fileID: 1599079540044013529}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &8904323622085547216
 SpriteRenderer:
@@ -5238,6 +5238,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingHealth: 5
+  icewalldeathSound: {fileID: 0}
   anim: {fileID: 0}
   invulnerable: 0
   onDeath:
@@ -5270,6 +5271,7 @@ MonoBehaviour:
   attackCooldown: 2
   attackspawn: {fileID: 201968255}
   fireballPrefab: {fileID: 5779991223254085366, guid: 1613cac0e0f6cbc449b33682be8c104a, type: 3}
+  fireballSound: {fileID: 8300000, guid: 0356634a6dd5ec446ac8c0da1085c71e, type: 3}
 --- !u!114 &1769276099
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5283,6 +5285,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AOE: {fileID: 8904323622176719016}
+  flameburstSound: {fileID: 8300000, guid: 63bdae12ed4aa544ca9c20296e483648, type: 3}
   Damage: 2
 --- !u!114 &6210233236434913130
 MonoBehaviour:

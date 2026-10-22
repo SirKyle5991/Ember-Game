@@ -34,7 +34,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6673002948631064288
 SpriteRenderer:
@@ -146,7 +146,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92bb2a094852e254fb10db081c9ee5f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingHealth: 200
+  startingHealth: 2
+  icewalldeathSound: {fileID: 0}
   anim: {fileID: 0}
   invulnerable: 0
   onDeath:
@@ -188,4 +189,5 @@ MonoBehaviour:
   moveSpeed: 1
   playerTransform: {fileID: 0}
   isChasing: 0
-  chaseDistance: 4
+  attackDistance: 1
+  maximumChaseDistance: 4

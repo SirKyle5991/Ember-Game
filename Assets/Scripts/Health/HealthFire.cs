@@ -5,6 +5,7 @@ using UnityEngine;
 public class HealthFire : MonoBehaviour
 {
     [SerializeField] private float healthValue;
+    [SerializeField] private AudioClip firepitSound;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -14,5 +15,6 @@ public class HealthFire : MonoBehaviour
             if(health != null)
                 health.AddHealth(healthValue);
         }
+        SoundManager.instance.PlaySound(firepitSound);
     }
 }

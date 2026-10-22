@@ -8,6 +8,8 @@ public class Flameburst : MonoBehaviour
 {
     [SerializeField] private GameObject AOE;
 
+    [SerializeField] private AudioClip flameburstSound;
+
     private float AttackTime = 1.0f;
     private float Timer = 0.0f;
 
@@ -47,6 +49,7 @@ public class Flameburst : MonoBehaviour
             {
                 Debug.Log("x key was pressed");
                 AOE.SetActive(true);
+                SoundManager.instance.PlaySound(flameburstSound);
                 Timer = 0.0f;
             }
         }

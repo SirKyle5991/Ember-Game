@@ -4902,8 +4902,8 @@ Transform:
   m_GameObject: {fileID: 1005528689918859927}
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: -10.05, y: -5.55, z: -0.07972701}
-  m_LocalScale: {x: 5.35, y: 5.35, z: 5.35}
-  m_ConstrainProportionsScale: 1
+  m_LocalScale: {x: 5.35, y: 3.1147032, z: 5.35}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 982660586}
   m_Father: {fileID: 0}
@@ -4949,7 +4949,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 4
+  m_SortingOrder: 6
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -5020,6 +5020,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingHealth: 3
+  icewalldeathSound: {fileID: 8300000, guid: 5b85f58d9a646d942bf5937954a3c8e8, type: 3}
   anim: {fileID: 0}
   invulnerable: 0
   onDeath:

@@ -7,6 +7,8 @@ public class Health : MonoBehaviour
 {
     [SerializeField] private float startingHealth;
 
+    [SerializeField] private AudioClip icewalldeathSound;
+
     public float currentHealth { get; private set; }
     public Animator anim;
     public bool dead => currentHealth <= 0;
@@ -33,6 +35,7 @@ public class Health : MonoBehaviour
         }
         else
         {
+            SoundManager.instance.PlaySound(icewalldeathSound);
             anim.SetTrigger("die");
             onDeath.Invoke();
         }

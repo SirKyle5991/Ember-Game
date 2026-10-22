@@ -16,6 +16,8 @@ public class Projectile : MonoBehaviour
     private Animator anim;
     private BoxCollider2D boxCollider;
 
+    [SerializeField] private AudioClip impactSound;
+
     private void Awake()
     {
         anim = GetComponent<Animator>();
@@ -38,6 +40,7 @@ public class Projectile : MonoBehaviour
     {
         hit = true;
         boxCollider.enabled = false;
+        SoundManager.instance.PlaySound(impactSound);
         anim.SetTrigger("explode");
         Destroy(gameObject, FIREBALL_DEATH_DELAY);
 

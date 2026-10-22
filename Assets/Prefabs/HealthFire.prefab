@@ -76,7 +76,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 6
   m_Sprite: {fileID: 2020022114, guid: a3c286472ce8bec4b9d4515a7d2cf642, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -127,6 +127,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthValue: 5
+  firepitSound: {fileID: 8300000, guid: b5a95403fd2f20640925568fc0f3490f, type: 3}
 --- !u!95 &6118472059857549583
 Animator:
   serializedVersion: 5
