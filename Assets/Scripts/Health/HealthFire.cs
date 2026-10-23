@@ -15,6 +15,6 @@ public class HealthFire : MonoBehaviour
             if(health != null)
                 health.AddHealth(healthValue);
         }
-        SoundManager.instance.PlaySound(firepitSound);
+        GetComponent<AudioSource>().PlayOneShot(firepitSound);
     }
 }
