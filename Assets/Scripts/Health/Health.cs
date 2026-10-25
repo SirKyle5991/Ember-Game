@@ -35,7 +35,7 @@ public class Health : MonoBehaviour
         }
         else
         {
-            SoundManager.instance.PlaySound(icewalldeathSound);
+            GetComponent<AudioSource>().PlayOneShot(icewalldeathSound);
             anim.SetTrigger("die");
             onDeath.Invoke();
         }

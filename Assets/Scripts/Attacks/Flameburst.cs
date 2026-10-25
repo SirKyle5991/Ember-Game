@@ -49,7 +49,7 @@ public class Flameburst : MonoBehaviour
             {
                 Debug.Log("x key was pressed");
                 AOE.SetActive(true);
-                SoundManager.instance.PlaySound(flameburstSound);
+                GetComponent<AudioSource>().PlayOneShot(flameburstSound);
                 Timer = 0.0f;
             }
         }

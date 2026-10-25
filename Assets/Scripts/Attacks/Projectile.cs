@@ -40,7 +40,7 @@ public class Projectile : MonoBehaviour
     {
         hit = true;
         boxCollider.enabled = false;
-        SoundManager.instance.PlaySound(impactSound);
+        GetComponent<AudioSource>().PlayOneShot(impactSound);
         anim.SetTrigger("explode");
         Destroy(gameObject, FIREBALL_DEATH_DELAY);
 
