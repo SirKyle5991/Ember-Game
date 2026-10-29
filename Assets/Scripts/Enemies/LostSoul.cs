@@ -15,6 +15,11 @@ public class LostSoul : Enemy
     [SerializeField] private LayerMask playerLayer;
     private float cooldownTimer = Mathf.Infinity;
 
+    [SerializeField] private AudioClip runningSound;
+    [SerializeField] private AudioClip hugSound;
+    //[SerializeField] private AudioClip ouchSound; //move to health
+    //[SerializeField] private AudioClip deathSound; //move to health
+
     private Animator anim;
     private Health playerHealth;
     private EnemyPatrol enemyPatrol;
@@ -87,12 +92,14 @@ public class LostSoul : Enemy
         {
             transform.localScale = new Vector3(1, 1, 1);
             transform.position += Vector3.left * moveSpeed * Time.deltaTime;
+            GetComponent<AudioSource>().PlayOneShot(runningSound);
             anim.SetBool("moving", true);
         }
         if (transform.position.x < playerTransform.position.x)
         {
             transform.localScale = new Vector3(-1, 1, 1);
             transform.position += Vector3.right * moveSpeed * Time.deltaTime;
+            GetComponent<AudioSource>().PlayOneShot(runningSound);
             anim.SetBool("moving", true);
         }
     }
@@ -104,6 +111,7 @@ public class LostSoul : Enemy
         {
             isChasing = false;
             cooldownTimer = 0;
+            GetComponent<AudioSource>().PlayOneShot(hugSound);
             anim.SetTrigger("hug");
             Debug.Log("lost soul is hugging");
             GameManager.Instance.Player.GetComponent<Health>().TakeDamage(damage);
