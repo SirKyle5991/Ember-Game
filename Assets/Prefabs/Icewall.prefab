@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 982660586}
   - component: {fileID: 982660588}
   - component: {fileID: 982660587}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: ice burst
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4887,7 +4887,7 @@ GameObject:
   - component: {fileID: 2563496105416889069}
   - component: {fileID: 2055600219}
   - component: {fileID: -4539895103055413249}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Icewall
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -5022,6 +5022,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingHealth: 3
   icewalldeathSound: {fileID: 8300000, guid: 5b85f58d9a646d942bf5937954a3c8e8, type: 3}
+  lostsoulouchSound: {fileID: 0}
+  lostsouldeathSound: {fileID: 0}
   anim: {fileID: 0}
   invulnerable: 0
   onDeath:
@@ -5104,7 +5106,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0

@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6673002948631064291}
   - component: {fileID: 6941696093142681318}
   - component: {fileID: 645771569945736261}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: LostSoul
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -252,7 +252,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0

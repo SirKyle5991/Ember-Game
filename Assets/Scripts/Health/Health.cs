@@ -33,13 +33,16 @@ public class Health : MonoBehaviour
         
         if (currentHealth > 0)
         {
-            GetComponent<AudioSource>().PlayOneShot(lostsoulouchSound);
+            if (lostsoulouchSound != null)
+                GetComponent<AudioSource>().PlayOneShot(lostsoulouchSound);
             anim.SetTrigger("hurt");
         }
         else
         {
-            GetComponent<AudioSource>().PlayOneShot(lostsouldeathSound);
-            GetComponent<AudioSource>().PlayOneShot(icewalldeathSound);
+            if (lostsouldeathSound != null) 
+                GetComponent<AudioSource>().PlayOneShot(lostsouldeathSound);
+            if (icewalldeathSound != null)
+                GetComponent<AudioSource>().PlayOneShot(icewalldeathSound);
             anim.SetTrigger("die");
             onDeath.Invoke();
         }
