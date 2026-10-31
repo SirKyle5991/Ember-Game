@@ -37,9 +37,14 @@ public class GameMenu : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
-    public void NextLevel()
+    public void LevelOne()
     {
-        SceneManager.LoadScene("Actual Castle");
+        SceneManager.LoadScene("Dungeon Floor 1");
+    }
+
+    public void LevelTwo()
+    {
+        SceneManager.LoadScene("Dungeon Floor 2");
     }
     //public void Volume()
     //{

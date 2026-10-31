@@ -1267,6 +1267,10 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1813600085, guid: 5d8945773fa8dca4189c74d2079259f3, type: 3}
+      propertyPath: gameMenu
+      value: 
+      objectReference: {fileID: 933869783}
     - target: {fileID: 354475986447992718, guid: 5d8945773fa8dca4189c74d2079259f3, type: 3}
       propertyPath: m_Name
       value: GameManager
@@ -1275,6 +1279,10 @@ PrefabInstance:
       propertyPath: playerHealth
       value: 
       objectReference: {fileID: 2074929176}
+    - target: {fileID: 6731546244239143536, guid: 5d8945773fa8dca4189c74d2079259f3, type: 3}
+      propertyPath: victoryMenu
+      value: 
+      objectReference: {fileID: 933869784}
     - target: {fileID: 9145524543493660871, guid: 5d8945773fa8dca4189c74d2079259f3, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -1322,6 +1330,16 @@ PrefabInstance:
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 5d8945773fa8dca4189c74d2079259f3, type: 3}
+--- !u!1 &933869783 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7126899023591272661, guid: 5d8945773fa8dca4189c74d2079259f3, type: 3}
+  m_PrefabInstance: {fileID: 933869782}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &933869784 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7126899021861802209, guid: 5d8945773fa8dca4189c74d2079259f3, type: 3}
+  m_PrefabInstance: {fileID: 933869782}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &951990446 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4429202903207382107, guid: dd548cbac13c1764693b743c0934328e, type: 3}
