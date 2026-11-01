@@ -94732,6 +94732,10 @@ PrefabInstance:
       propertyPath: playerHealth
       value: 
       objectReference: {fileID: 623130394}
+    - target: {fileID: 6731546244239143536, guid: 5d8945773fa8dca4189c74d2079259f3, type: 3}
+      propertyPath: victoryMenu
+      value: 
+      objectReference: {fileID: 1602855558}
     - target: {fileID: 7126899023448040890, guid: 5d8945773fa8dca4189c74d2079259f3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: LevelOne
@@ -94783,6 +94787,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 5d8945773fa8dca4189c74d2079259f3, type: 3}
+--- !u!1 &1602855558 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7126899021861802209, guid: 5d8945773fa8dca4189c74d2079259f3, type: 3}
+  m_PrefabInstance: {fileID: 1602855557}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1623294536
 GameObject:
   m_ObjectHideFlags: 0
