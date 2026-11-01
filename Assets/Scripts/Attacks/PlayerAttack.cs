@@ -7,9 +7,12 @@ public class PlayerAttack : MonoBehaviour
 {
     [SerializeField] private float attackCooldown;
     [SerializeField] private Transform attackspawn;
+    [SerializeField] private Transform lineOfSight;
     [SerializeField] private Projectile fireballPrefab;
     [SerializeField] private AudioClip fireballSound;
 
+    public LayerMask LineOfSightMask;
+    
     //[SerializeField] private GameObject[] Fireball;
     private Animator anim;
     private PlayerController playerController;
@@ -40,6 +43,22 @@ public class PlayerAttack : MonoBehaviour
 
     private void Attack()
     {
+        ContactFilter2D contactFilter = new ContactFilter2D();
+        contactFilter.SetLayerMask(LineOfSightMask);
+        int hit = Physics2D.Raycast(lineOfSight.position,
+            attackspawn.position - lineOfSight.position,
+            contactFilter,
+            new List<RaycastHit2D>(),
+            Vector3.Distance(attackspawn.position,
+                lineOfSight.position));
+        Debug.Log(hit);
+        Debug.DrawLine(attackspawn.position,
+            lineOfSight.position, Color.green, 3);
+        
+        if (hit != 0)
+        {
+            return;
+        }
         GetComponent<AudioSource>().PlayOneShot(fireballSound);
         anim.SetTrigger("attack");
         cooldownTimer = 0;

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6673002948631064316}
   - component: {fileID: 6673002948631064291}
   - component: {fileID: 6673002948631064290}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Sucker1
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -147,6 +147,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingHealth: 3
+  icewalldeathSound: {fileID: 0}
+  lostsoulouchSound: {fileID: 0}
+  lostsouldeathSound: {fileID: 0}
   anim: {fileID: 0}
   invulnerable: 0
   onDeath:
@@ -176,6 +179,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d51dc25c16946fc45b9ff4c511a7ff98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Health: {fileID: 0}
   attackCooldown: 1
   range: 1.14
   colliderDistance: 0.9
@@ -184,3 +188,4 @@ MonoBehaviour:
   playerLayer:
     serializedVersion: 2
     m_Bits: 8
+  attackSound: {fileID: 0}

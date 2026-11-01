@@ -184,6 +184,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: LostSoul (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 6941696093142681318, guid: 356f0e1c72163ff429eb04af5f107c09, type: 3}
+      propertyPath: moveSpeed
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6941696093142681318, guid: 356f0e1c72163ff429eb04af5f107c09, type: 3}
+      propertyPath: playerTransform
+      value: 
+      objectReference: {fileID: 2074929169}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 356f0e1c72163ff429eb04af5f107c09, type: 3}
@@ -293,7 +301,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2563496105416889069, guid: cd711868deefc8d4a81b06ca1020e568, type: 3}
       propertyPath: startingHealth
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -354,6 +362,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: LostSoul (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 6941696093142681318, guid: 356f0e1c72163ff429eb04af5f107c09, type: 3}
+      propertyPath: moveSpeed
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6941696093142681318, guid: 356f0e1c72163ff429eb04af5f107c09, type: 3}
+      propertyPath: playerTransform
+      value: 
+      objectReference: {fileID: 2074929169}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 356f0e1c72163ff429eb04af5f107c09, type: 3}
@@ -705,6 +721,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: LostSoul (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 6941696093142681318, guid: 356f0e1c72163ff429eb04af5f107c09, type: 3}
+      propertyPath: moveSpeed
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6941696093142681318, guid: 356f0e1c72163ff429eb04af5f107c09, type: 3}
+      propertyPath: playerTransform
+      value: 
+      objectReference: {fileID: 2074929169}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 356f0e1c72163ff429eb04af5f107c09, type: 3}
@@ -1156,6 +1180,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: LostSoul (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 6941696093142681318, guid: 356f0e1c72163ff429eb04af5f107c09, type: 3}
+      propertyPath: moveSpeed
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6941696093142681318, guid: 356f0e1c72163ff429eb04af5f107c09, type: 3}
+      propertyPath: playerTransform
+      value: 
+      objectReference: {fileID: 2074929169}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 356f0e1c72163ff429eb04af5f107c09, type: 3}
@@ -1235,13 +1267,25 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1813600085, guid: 5d8945773fa8dca4189c74d2079259f3, type: 3}
+      propertyPath: gameMenu
+      value: 
+      objectReference: {fileID: 933869783}
     - target: {fileID: 354475986447992718, guid: 5d8945773fa8dca4189c74d2079259f3, type: 3}
       propertyPath: m_Name
       value: GameManager
       objectReference: {fileID: 0}
+    - target: {fileID: 5414671692588002779, guid: 5d8945773fa8dca4189c74d2079259f3, type: 3}
+      propertyPath: playerHealth
+      value: 
+      objectReference: {fileID: 2074929176}
+    - target: {fileID: 6731546244239143536, guid: 5d8945773fa8dca4189c74d2079259f3, type: 3}
+      propertyPath: victoryMenu
+      value: 
+      objectReference: {fileID: 933869784}
     - target: {fileID: 9145524543493660871, guid: 5d8945773fa8dca4189c74d2079259f3, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9145524543493660871, guid: 5d8945773fa8dca4189c74d2079259f3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1286,6 +1330,16 @@ PrefabInstance:
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 5d8945773fa8dca4189c74d2079259f3, type: 3}
+--- !u!1 &933869783 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7126899023591272661, guid: 5d8945773fa8dca4189c74d2079259f3, type: 3}
+  m_PrefabInstance: {fileID: 933869782}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &933869784 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7126899021861802209, guid: 5d8945773fa8dca4189c74d2079259f3, type: 3}
+  m_PrefabInstance: {fileID: 933869782}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &951990446 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4429202903207382107, guid: dd548cbac13c1764693b743c0934328e, type: 3}
@@ -1353,7 +1407,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2563496105416889069, guid: cd711868deefc8d4a81b06ca1020e568, type: 3}
       propertyPath: startingHealth
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -1477,6 +1531,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: LostSoul (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 6941696093142681318, guid: 356f0e1c72163ff429eb04af5f107c09, type: 3}
+      propertyPath: moveSpeed
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6941696093142681318, guid: 356f0e1c72163ff429eb04af5f107c09, type: 3}
+      propertyPath: playerTransform
+      value: 
+      objectReference: {fileID: 2074929169}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 356f0e1c72163ff429eb04af5f107c09, type: 3}
@@ -1547,7 +1609,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2563496105416889069, guid: cd711868deefc8d4a81b06ca1020e568, type: 3}
       propertyPath: startingHealth
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -99777,7 +99839,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2563496105416889069, guid: cd711868deefc8d4a81b06ca1020e568, type: 3}
       propertyPath: startingHealth
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -99844,7 +99906,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2563496105416889069, guid: cd711868deefc8d4a81b06ca1020e568, type: 3}
       propertyPath: startingHealth
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -100101,7 +100163,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2563496105416889069, guid: cd711868deefc8d4a81b06ca1020e568, type: 3}
       propertyPath: startingHealth
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -100627,7 +100689,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2563496105416889069, guid: cd711868deefc8d4a81b06ca1020e568, type: 3}
       propertyPath: startingHealth
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -100693,6 +100755,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: LostSoul (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 6941696093142681318, guid: 356f0e1c72163ff429eb04af5f107c09, type: 3}
+      propertyPath: moveSpeed
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6941696093142681318, guid: 356f0e1c72163ff429eb04af5f107c09, type: 3}
+      propertyPath: playerTransform
+      value: 
+      objectReference: {fileID: 2074929169}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 356f0e1c72163ff429eb04af5f107c09, type: 3}
@@ -217422,7 +217492,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43f9ff2b9ec216e408e41976ae78075f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 0}
+  cam: {fileID: 247966416}
   relativeMove: 0.1
 --- !u!483693784 &1652128925
 TilemapRenderer:
@@ -218941,7 +219011,7 @@ Transform:
   - {fileID: 1652128923}
   - {fileID: 1336861881}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1800118218 stripped
 Transform:
@@ -219004,6 +219074,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: LostSoul (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6941696093142681318, guid: 356f0e1c72163ff429eb04af5f107c09, type: 3}
+      propertyPath: moveSpeed
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6941696093142681318, guid: 356f0e1c72163ff429eb04af5f107c09, type: 3}
+      propertyPath: playerTransform
+      value: 
+      objectReference: {fileID: 2074929169}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 356f0e1c72163ff429eb04af5f107c09, type: 3}
@@ -219084,7 +219162,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2563496105416889069, guid: cd711868deefc8d4a81b06ca1020e568, type: 3}
       propertyPath: startingHealth
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -219215,7 +219293,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2563496105416889069, guid: cd711868deefc8d4a81b06ca1020e568, type: 3}
       propertyPath: startingHealth
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -219276,6 +219354,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: LostSoul
       objectReference: {fileID: 0}
+    - target: {fileID: 6941696093142681318, guid: 356f0e1c72163ff429eb04af5f107c09, type: 3}
+      propertyPath: moveSpeed
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6941696093142681318, guid: 356f0e1c72163ff429eb04af5f107c09, type: 3}
+      propertyPath: playerTransform
+      value: 
+      objectReference: {fileID: 2074929169}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 356f0e1c72163ff429eb04af5f107c09, type: 3}
@@ -219356,11 +219442,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2563496105416889069, guid: cd711868deefc8d4a81b06ca1020e568, type: 3}
       propertyPath: startingHealth
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: cd711868deefc8d4a81b06ca1020e568, type: 3}
+--- !u!4 &2074929169 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8904323622085547217, guid: a64d35e12f8257645b5e55c62aeda3fd, type: 3}
+  m_PrefabInstance: {fileID: 247966415}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2074929176 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8904323621276722134, guid: a64d35e12f8257645b5e55c62aeda3fd, type: 3}
+  m_PrefabInstance: {fileID: 247966415}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92bb2a094852e254fb10db081c9ee5f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2075898548
 PrefabInstance:
   m_ObjectHideFlags: 0

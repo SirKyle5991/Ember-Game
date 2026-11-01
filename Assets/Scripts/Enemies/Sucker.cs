@@ -13,6 +13,9 @@ public class Sucker : Enemy
     [SerializeField] private LayerMask playerLayer;
     private float cooldownTimer = Mathf.Infinity;
 
+    //[SerializeField] private AudioClip runningSound;
+    [SerializeField] private AudioClip attackSound;
+
     private Animator anim;
     private Health playerHealth;
     private EnemyPatrol enemyPatrol;
@@ -25,6 +28,7 @@ public class Sucker : Enemy
     protected override void Awake()
     {
         base.Awake();
+        //GetComponent<AudioSource>().PlayOneShot(runningSound);
         anim = GetComponent<Animator>();
         enemyPatrol = GetComponentInParent<EnemyPatrol>();
     }
@@ -39,6 +43,7 @@ public class Sucker : Enemy
             if (cooldownTimer >= attackCooldown)
             {
                 cooldownTimer = 0;
+                GetComponent<AudioSource>().PlayOneShot(attackSound);
                 anim.SetTrigger("hug");
             }
         }

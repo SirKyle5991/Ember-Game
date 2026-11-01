@@ -93985,6 +93985,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 49c90677b2579f641b3eab4c5f19a17f, type: 3}
+--- !u!1 &1053634366 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7126899022122666698, guid: 5d8945773fa8dca4189c74d2079259f3, type: 3}
+  m_PrefabInstance: {fileID: 1602855557}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1129209880
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -94111,6 +94116,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 4429202903207382107, guid: b2fe8e63a2476e847bc993610a110c11, type: 3}
   m_PrefabInstance: {fileID: 1134616733}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1141946768 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7126899023591272661, guid: 5d8945773fa8dca4189c74d2079259f3, type: 3}
+  m_PrefabInstance: {fileID: 1602855557}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1185490532
 PrefabInstance:
@@ -94690,6 +94700,10 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1813600085, guid: 5d8945773fa8dca4189c74d2079259f3, type: 3}
+      propertyPath: gameMenu
+      value: 
+      objectReference: {fileID: 1141946768}
     - target: {fileID: 1912199693, guid: 5d8945773fa8dca4189c74d2079259f3, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -94710,10 +94724,18 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3960303476671714859, guid: 5d8945773fa8dca4189c74d2079259f3, type: 3}
+      propertyPath: m_FirstSelected
+      value: 
+      objectReference: {fileID: 1053634366}
     - target: {fileID: 5414671692588002779, guid: 5d8945773fa8dca4189c74d2079259f3, type: 3}
       propertyPath: playerHealth
       value: 
       objectReference: {fileID: 623130394}
+    - target: {fileID: 7126899023448040890, guid: 5d8945773fa8dca4189c74d2079259f3, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LevelOne
+      objectReference: {fileID: 0}
     - target: {fileID: 9145524543493660871, guid: 5d8945773fa8dca4189c74d2079259f3, type: 3}
       propertyPath: m_RootOrder
       value: 0
