@@ -16,7 +16,11 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D body;
     private Animator anim;
     private BoxCollider2D playerCollisionBounds;
-     
+
+    [SerializeField] private AudioClip playerjumpSound;
+    [SerializeField] private AudioClip playerrunSound;
+    [SerializeField] private AudioClip playerdoublejumpSound;
+
     public bool grounded;
 
     private bool canDash = true;
@@ -99,6 +103,8 @@ public class PlayerController : MonoBehaviour
         {
             if(canGroundJump || (remainingAirJumps > 0 && !isRightWallStable && !isLeftWallStable))
             {
+                if (playerjumpSound != null)
+                    GetComponent<AudioSource>().PlayOneShot(playerjumpSound);
                 anim.SetTrigger("jump");
                 body.velocity = new Vector2(body.velocity.x, jumpingPower);
                 if(!canGroundJump)
@@ -147,6 +153,8 @@ public class PlayerController : MonoBehaviour
 
 
         //set animator parameters
+        if (playerrunSound != null)
+            GetComponent<AudioSource>().PlayOneShot(playerrunSound);
         anim.SetBool("Run", horizontalInput != 0);
 
         if (playerDash.WasPerformedThisFrame() && canDash)
@@ -157,7 +165,6 @@ public class PlayerController : MonoBehaviour
 
     private void Jump()
     {
-        body.velocity = new Vector2(body.velocity.x, 5);
         anim.SetTrigger("jump");
         grounded = false;
     }

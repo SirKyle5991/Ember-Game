@@ -10,6 +10,8 @@ public class Health : MonoBehaviour
     [SerializeField] private AudioClip icewalldeathSound;
     [SerializeField] private AudioClip lostsoulouchSound;
     [SerializeField] private AudioClip lostsouldeathSound;
+    [SerializeField] private AudioClip playerouchSound;
+    [SerializeField] private AudioClip playerdeathSound;
 
     public float currentHealth { get; private set; }
     public Animator anim;
@@ -35,12 +37,16 @@ public class Health : MonoBehaviour
         {
             if (lostsoulouchSound != null)
                 GetComponent<AudioSource>().PlayOneShot(lostsoulouchSound);
+            if (playerouchSound != null)
+                GetComponent<AudioSource>().PlayOneShot(playerouchSound);
             anim.SetTrigger("hurt");
         }
         else
         {
             if (lostsouldeathSound != null) 
                 GetComponent<AudioSource>().PlayOneShot(lostsouldeathSound);
+            if (playerdeathSound != null)
+                GetComponent<AudioSource>().PlayOneShot(playerdeathSound);
             if (icewalldeathSound != null)
                 GetComponent<AudioSource>().PlayOneShot(icewalldeathSound);
             anim.SetTrigger("die");

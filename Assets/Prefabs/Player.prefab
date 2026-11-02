@@ -5115,7 +5115,7 @@ Transform:
   - {fileID: 1599079540044013529}
   - {fileID: 3182622976316642295}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &8904323622085547216
 SpriteRenderer:
@@ -5158,7 +5158,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 4
-  m_Sprite: {fileID: 2012901523738451837, guid: 067b79a96655e3f47a2b767c5b85bc60, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -5166,7 +5166,7 @@ SpriteRenderer:
   m_Size: {x: 0.9375, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!61 &8904323622085547219
@@ -5255,6 +5255,9 @@ MonoBehaviour:
   jumpingPower: 5
   playerAcceleration: 10
   maxCoyoteFrames: 3
+  playerjumpSound: {fileID: 8300000, guid: 9987d0e8a4a6c6b40a607c3b25890eb5, type: 3}
+  playerrunSound: {fileID: 0}
+  playerdoublejumpSound: {fileID: 8300000, guid: 715611a7eaa62664abb09e38c6696c6c, type: 3}
   grounded: 0
   framesSinceGrounded: 0
   remainingAirJumps: 2
@@ -5274,6 +5277,8 @@ MonoBehaviour:
   icewalldeathSound: {fileID: 0}
   lostsoulouchSound: {fileID: 0}
   lostsouldeathSound: {fileID: 0}
+  playerouchSound: {fileID: 8300000, guid: 8d52f14a44eb0354ca751512bb5ad2bc, type: 3}
+  playerdeathSound: {fileID: 8300000, guid: f215265a8aaf97048af1b7af01658b0b, type: 3}
   anim: {fileID: 0}
   invulnerable: 0
   onDeath:
@@ -5308,6 +5313,9 @@ MonoBehaviour:
   lineOfSight: {fileID: 3182622976316642295}
   fireballPrefab: {fileID: 5779991223254085366, guid: 1613cac0e0f6cbc449b33682be8c104a, type: 3}
   fireballSound: {fileID: 8300000, guid: 0356634a6dd5ec446ac8c0da1085c71e, type: 3}
+  LineOfSightMask:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!114 &1769276099
 MonoBehaviour:
   m_ObjectHideFlags: 0
