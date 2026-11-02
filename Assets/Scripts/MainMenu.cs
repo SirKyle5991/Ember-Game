@@ -2,18 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
+using UnityEngine.InputSystem;
 
 public class MainMenu : MonoBehaviour
 {
-    //[SerializeField] GameObject mainMenu;
-    //
-    //private InputAction playerMainMenu;
-    //
-    //public void Start()
-    //{
-    //    var actionMap = GameManager.Instance.Input.actions.FindActionMap("Player Controls"); //ask for the action map
-    //    playerMainMenu = actionMap.FindAction("Main Menu");
-    //}
+    public GameObject Button;
+    public GameObject Play;
+
+    EventSystem m_EventSystem;
+    public void Controls()
+    {
+        EventSystem.current.SetSelectedGameObject(Button);
+    }
+    public void BackPlay()
+    {
+        EventSystem.current.SetSelectedGameObject(Play);
+    }
     public void PlayGame()
     {
         SceneManager.LoadSceneAsync("Tutorial");

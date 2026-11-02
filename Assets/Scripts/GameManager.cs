@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Enemies;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.EventSystems;
 
 public class GameManager : MonoBehaviour
 {
@@ -21,6 +22,9 @@ public class GameManager : MonoBehaviour
     private Action OnPlayerDeath;
 
     public GameObject Player { get; private set; }
+    public GameObject NextLevel;
+
+    EventSystem m_EventSystem;
 
 
     private void Awake()
@@ -34,6 +38,11 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
        
+    }
+
+    public void OnEnable()
+    {
+        m_EventSystem = EventSystem.current;
     }
 
     public void PlayerDeath()
@@ -66,8 +75,9 @@ public class GameManager : MonoBehaviour
         if (LitSconceCount >= _registeredSconces.Count)
         {
             victoryMenu.SetActive(true);
-            Input.actions.FindActionMap("Player Controls").Disable();
-            Input.actions.FindActionMap("UI").Enable();
+            EventSystem.current.SetSelectedGameObject(NextLevel);
+            //Input.actions.FindActionMap("Player Controls").Disable();
+            //Input.actions.FindActionMap("UI").Enable();
             Debug.Log("ALL SCONCES LIT");
         }
     }
