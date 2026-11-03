@@ -20,6 +20,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private AudioClip playerjumpSound;
     [SerializeField] private AudioClip playerrunSound;
     [SerializeField] private AudioClip playerdoublejumpSound;
+    [SerializeField] private AudioClip playerdashSound;
+    
 
     public bool grounded;
 
@@ -101,6 +103,8 @@ public class PlayerController : MonoBehaviour
         
         if (isJumping)
         {
+            if (playerjumpSound != null)
+                GetComponent<AudioSource>().PlayOneShot(playerjumpSound);
             if(canGroundJump || (remainingAirJumps > 0 && !isRightWallStable && !isLeftWallStable))
             {
                 if (playerjumpSound != null)
@@ -174,6 +178,8 @@ public class PlayerController : MonoBehaviour
     {
         canDash = false;
         isDashing = true;
+        if (playerdashSound != null)
+            GetComponent<AudioSource>().PlayOneShot(playerdashSound);
         float originalGravity = body.gravityScale;
         body.gravityScale = 0f;
         body.velocity = new Vector2(transform.localScale.x * dashingPower, 0f);

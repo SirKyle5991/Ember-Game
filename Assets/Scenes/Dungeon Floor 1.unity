@@ -105916,6 +105916,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 8904323622085547230, guid: a64d35e12f8257645b5e55c62aeda3fd, type: 3}
+      propertyPath: playerdashSound
+      value: 
+      objectReference: {fileID: 8300000, guid: f215265a8aaf97048af1b7af01658b0b, type: 3}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: a64d35e12f8257645b5e55c62aeda3fd, type: 3}
