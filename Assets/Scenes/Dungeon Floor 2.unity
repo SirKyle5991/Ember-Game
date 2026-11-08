@@ -1277,11 +1277,27 @@ PrefabInstance:
       objectReference: {fileID: 2074929176}
     - target: {fileID: 7126899021861802209, guid: 5d8945773fa8dca4189c74d2079259f3, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7126899022113945723, guid: 5d8945773fa8dca4189c74d2079259f3, type: 3}
       propertyPath: m_text
       value: Main Menu
+      objectReference: {fileID: 0}
+    - target: {fileID: 7126899022113945723, guid: 5d8945773fa8dca4189c74d2079259f3, type: 3}
+      propertyPath: m_fontSize
+      value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 7126899022113945723, guid: 5d8945773fa8dca4189c74d2079259f3, type: 3}
+      propertyPath: m_margin.w
+      value: -24.72353
+      objectReference: {fileID: 0}
+    - target: {fileID: 7126899022113945723, guid: 5d8945773fa8dca4189c74d2079259f3, type: 3}
+      propertyPath: m_margin.z
+      value: -150.24216
+      objectReference: {fileID: 0}
+    - target: {fileID: 7126899022113945723, guid: 5d8945773fa8dca4189c74d2079259f3, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 70
       objectReference: {fileID: 0}
     - target: {fileID: 7126899023448040890, guid: 5d8945773fa8dca4189c74d2079259f3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
