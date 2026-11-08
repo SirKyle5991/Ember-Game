@@ -179,6 +179,7 @@ public class PlayerController : MonoBehaviour
         isDashing = true;
         if (playerdashSound != null)
             GetComponent<AudioSource>().PlayOneShot(playerdashSound);
+        anim.SetTrigger("dash");
         float originalGravity = body.gravityScale;
         body.gravityScale = 0f;
         body.velocity = new Vector2(transform.localScale.x * dashingPower, 0f);
