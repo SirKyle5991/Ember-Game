@@ -5115,7 +5115,7 @@ Transform:
   - {fileID: 1599079540044013529}
   - {fileID: 3182622976316642295}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &8904323622085547216
 SpriteRenderer:
@@ -5258,6 +5258,7 @@ MonoBehaviour:
   playerjumpSound: {fileID: 8300000, guid: 9987d0e8a4a6c6b40a607c3b25890eb5, type: 3}
   playerrunSound: {fileID: 0}
   playerdoublejumpSound: {fileID: 8300000, guid: 715611a7eaa62664abb09e38c6696c6c, type: 3}
+  playerdashSound: {fileID: 8300000, guid: 5be997c02c802d54a9711120a43b0f20, type: 3}
   grounded: 0
   framesSinceGrounded: 0
   remainingAirJumps: 2
@@ -5315,7 +5316,7 @@ MonoBehaviour:
   fireballSound: {fileID: 8300000, guid: 0356634a6dd5ec446ac8c0da1085c71e, type: 3}
   LineOfSightMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1
 --- !u!114 &1769276099
 MonoBehaviour:
   m_ObjectHideFlags: 0

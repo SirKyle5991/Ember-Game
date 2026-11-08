@@ -107,8 +107,7 @@ public class PlayerController : MonoBehaviour
                 GetComponent<AudioSource>().PlayOneShot(playerjumpSound);
             if(canGroundJump || (remainingAirJumps > 0 && !isRightWallStable && !isLeftWallStable))
             {
-                if (playerjumpSound != null)
-                    GetComponent<AudioSource>().PlayOneShot(playerjumpSound);
+                GetComponent<AudioSource>().PlayOneShot(playerjumpSound);
                 anim.SetTrigger("jump");
                 body.velocity = new Vector2(body.velocity.x, jumpingPower);
                 if(!canGroundJump)

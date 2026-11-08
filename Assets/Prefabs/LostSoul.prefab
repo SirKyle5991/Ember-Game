@@ -35,7 +35,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6673002948631064288
 SpriteRenderer:
@@ -147,10 +147,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92bb2a094852e254fb10db081c9ee5f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingHealth: 2
+  startingHealth: 4
   icewalldeathSound: {fileID: 0}
-  lostsoulouchSound: {fileID: 8300000, guid: 63bdae12ed4aa544ca9c20296e483648, type: 3}
-  lostsouldeathSound: {fileID: 8300000, guid: 5b85f58d9a646d942bf5937954a3c8e8, type: 3}
+  lostsoulouchSound: {fileID: 8300000, guid: 57d8e1a5f6da96b4e8dda470fb8c82b7, type: 3}
+  lostsouldeathSound: {fileID: 8300000, guid: 3e5cf8a99fd43f94fbdbd72445156b3f, type: 3}
+  playerouchSound: {fileID: 0}
+  playerdeathSound: {fileID: 0}
   anim: {fileID: 0}
   invulnerable: 0
   onDeath:
@@ -189,9 +191,9 @@ MonoBehaviour:
   playerLayer:
     serializedVersion: 2
     m_Bits: 8
-  runningSound: {fileID: 8300000, guid: 1a9ec01c35e720e4ebdfbb1cd89a5202, type: 3}
-  hugSound: {fileID: 8300000, guid: 5b85f58d9a646d942bf5937954a3c8e8, type: 3}
-  moveSpeed: 1
+  runningSound: {fileID: 0}
+  hugSound: {fileID: 8300000, guid: b33575e9480335748aff77df3346b979, type: 3}
+  moveSpeed: 2
   playerTransform: {fileID: 0}
   isChasing: 0
   attackDistance: 1
@@ -252,7 +254,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
+      value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 0
