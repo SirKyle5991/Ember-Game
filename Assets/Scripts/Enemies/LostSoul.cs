@@ -8,6 +8,7 @@ using UnityEngine.Serialization;
 public class LostSoul : Enemy
 {
     [SerializeField] private float attackCooldown;
+    [SerializeField] private float walkCooldown;
     [SerializeField] private float range;
     [SerializeField] private float colliderDistance;
     [SerializeField] private int damage;
@@ -78,7 +79,6 @@ public class LostSoul : Enemy
             default:
                 throw new ArgumentOutOfRangeException();
         }
-
     }
 
     private void DoIdle()
@@ -92,14 +92,26 @@ public class LostSoul : Enemy
         {
             transform.localScale = new Vector3(1, 1, 1);
             transform.position += Vector3.left * moveSpeed * Time.deltaTime;
-            GetComponent<AudioSource>().PlayOneShot(runningSound);
+            if (cooldownTimer > walkCooldown)
+            {
+                if (runningSound != null)
+                    GetComponent<AudioSource>().PlayOneShot(runningSound);
+                cooldownTimer = 0;
+            }
+            cooldownTimer += Time.deltaTime;
             anim.SetBool("moving", true);
         }
         if (transform.position.x < playerTransform.position.x)
         {
             transform.localScale = new Vector3(-1, 1, 1);
             transform.position += Vector3.right * moveSpeed * Time.deltaTime;
-            GetComponent<AudioSource>().PlayOneShot(runningSound);
+            if (cooldownTimer > walkCooldown)
+            {
+                if (runningSound != null)
+                    GetComponent<AudioSource>().PlayOneShot(runningSound);
+                cooldownTimer = 0;
+            }
+            cooldownTimer += Time.deltaTime;
             anim.SetBool("moving", true);
         }
     }

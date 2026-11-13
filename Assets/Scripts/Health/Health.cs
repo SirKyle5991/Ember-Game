@@ -56,7 +56,7 @@ public class Health : MonoBehaviour
 
     IEnumerator DeathAfterDelay()
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
         gameObject.SetActive(false);
         if (gameObject.CompareTag("Player"))
         {

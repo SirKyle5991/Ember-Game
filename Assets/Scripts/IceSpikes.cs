@@ -12,6 +12,10 @@ public class IceSpikes : MonoBehaviour
         {
             collision.GetComponent<Health>().TakeDamage(damage);
         }
+        if (collision.tag == "Enemy")
+        {
+            collision.GetComponent<Health>().TakeDamage(damage);
+        }
     }
 
     // Update is called once per frame

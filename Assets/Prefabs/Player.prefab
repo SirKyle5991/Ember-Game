@@ -5249,6 +5249,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 4
+  playerwalkCooldown: 0.35
   groundContactLayers:
     serializedVersion: 2
     m_Bits: 1
@@ -5256,7 +5257,7 @@ MonoBehaviour:
   playerAcceleration: 10
   maxCoyoteFrames: 3
   playerjumpSound: {fileID: 8300000, guid: 9987d0e8a4a6c6b40a607c3b25890eb5, type: 3}
-  playerrunSound: {fileID: 0}
+  playerrunSound: {fileID: 8300000, guid: 1bf1a9764cf88534e8f0e276063025e6, type: 3}
   playerdoublejumpSound: {fileID: 8300000, guid: 715611a7eaa62664abb09e38c6696c6c, type: 3}
   playerdashSound: {fileID: 8300000, guid: 5be997c02c802d54a9711120a43b0f20, type: 3}
   grounded: 0

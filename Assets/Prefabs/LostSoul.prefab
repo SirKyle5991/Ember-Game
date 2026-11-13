@@ -35,7 +35,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6673002948631064288
 SpriteRenderer:
@@ -184,6 +184,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Health: {fileID: 0}
   attackCooldown: 1
+  walkCooldown: 1
   range: 2
   colliderDistance: 0.01
   damage: 1
@@ -191,13 +192,13 @@ MonoBehaviour:
   playerLayer:
     serializedVersion: 2
     m_Bits: 8
-  runningSound: {fileID: 0}
+  runningSound: {fileID: 8300000, guid: a5018a37cb424fd47bbf3b3592b3a829, type: 3}
   hugSound: {fileID: 8300000, guid: b33575e9480335748aff77df3346b979, type: 3}
   moveSpeed: 2
   playerTransform: {fileID: 0}
   isChasing: 0
   attackDistance: 1
-  maximumChaseDistance: 4
+  maximumChaseDistance: 2.2
 --- !u!82 &645771569945736261
 AudioSource:
   m_ObjectHideFlags: 0

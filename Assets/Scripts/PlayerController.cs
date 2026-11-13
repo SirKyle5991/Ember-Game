@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     private const int MAX_AIR_JUMPS = 1;
     
     [SerializeField] private float speed;
+    [SerializeField] private float playerwalkCooldown;
     [SerializeField] private LayerMask groundContactLayers;
     [SerializeField] float jumpingPower = 4f;
     [SerializeField] private float playerAcceleration = 10;
@@ -16,6 +17,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D body;
     private Animator anim;
     private BoxCollider2D playerCollisionBounds;
+    private float cooldownTimer = Mathf.Infinity;
 
     [SerializeField] private AudioClip playerjumpSound;
     [SerializeField] private AudioClip playerrunSound;
@@ -153,12 +155,31 @@ public class PlayerController : MonoBehaviour
 
         else if (horizontalInput < -0.01f)
             transform.localScale = new Vector3(-1, 1, 1);
-
-
-        //set animator parameters
-        if (playerrunSound != null)
-            GetComponent<AudioSource>().PlayOneShot(playerrunSound);
+       
         anim.SetBool("Run", horizontalInput != 0);
+        if (grounded == true)
+        {
+            if (horizontalInput > 0.01f)
+            {
+                if (cooldownTimer > playerwalkCooldown)
+                {
+                    if (playerrunSound != null)
+                        GetComponent<AudioSource>().PlayOneShot(playerrunSound);
+                    cooldownTimer = 0;
+                }
+                cooldownTimer += Time.deltaTime;
+            }
+            if (horizontalInput < -0.01f)
+            {
+                if (cooldownTimer > playerwalkCooldown)
+                {
+                    if (playerrunSound != null)
+                        GetComponent<AudioSource>().PlayOneShot(playerrunSound);
+                    cooldownTimer = 0;
+                }
+                cooldownTimer += Time.deltaTime;
+            }
+        }
 
         if (playerDash.WasPerformedThisFrame() && canDash)
         {
