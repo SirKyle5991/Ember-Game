@@ -18,9 +18,9 @@ public class Tutorials : MonoBehaviour
     }
     private void OnTriggerStay2D(Collider2D col)
     {
-        //if (Input.GetKeyDown(KeyCode.E))
+        //if (Input.GetKeyDown(KeyCode.E))// future experimentation with button activated npcs 
         {
-            Debug.Log("duuuuh");
+            //Debug.Log("duuuuh");
             TutorialActivate.SetActive(true);
             StartCoroutine(TutorialDelay());
         }

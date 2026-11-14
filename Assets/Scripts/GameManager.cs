@@ -77,11 +77,8 @@ public class GameManager : MonoBehaviour
         if (LitSconceCount >= _registeredSconces.Count)
         {
             victoryMenu.SetActive(true);
-            //AudioListener.volume = 0f; // Mute all audio
             Sounds.SetActive(false);
             EventSystem.current.SetSelectedGameObject(NextLevel);
-            //Input.actions.FindActionMap("Player Controls").Disable();
-            //Input.actions.FindActionMap("UI").Enable();
             Debug.Log("ALL SCONCES LIT");
         }
     }

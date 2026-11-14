@@ -46,10 +46,6 @@ public class GameMenu : MonoBehaviour
     {
         SceneManager.LoadScene("Dungeon Floor 2");
     }
-    //public void Volume()
-    //{
-    //
-    //}
     void Update()
     {
         if (playerGameMenu.WasPerformedThisFrame())

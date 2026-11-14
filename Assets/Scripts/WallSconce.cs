@@ -6,7 +6,6 @@ using UnityEngine;
 public class WallSconce : MonoBehaviour
 {
     public GameObject TorchLitPrefab;
-    //public Transform spawnPosition;
 
     public bool isLit;
 
@@ -44,6 +43,5 @@ public class WallSconce : MonoBehaviour
         Instantiate(TorchLitPrefab, objectPosition, transform.rotation);
         GameManager.Instance.OnSconceLit();
         Destroy(gameObject);
-        
     }
 }

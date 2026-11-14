@@ -13,15 +13,11 @@ public class PlayerAttack : MonoBehaviour
 
     public LayerMask LineOfSightMask;
     
-    //[SerializeField] private GameObject[] Fireball;
     private Animator anim;
     private PlayerController playerController;
     private float cooldownTimer = Mathf.Infinity;
     
     private InputAction playerFireball;
-
-    //private int Health currentHealth;
-    //private bool CanAttack => currentHealth > 2;
 
     private void Start()
     {
@@ -66,18 +62,5 @@ public class PlayerAttack : MonoBehaviour
 
         var fireball = Instantiate(fireballPrefab, attackspawn.position, Quaternion.identity);
         fireball.SetDirection(Mathf.Sign(transform.localScale.x));
-
-        //Fireball[FindFireball()].transform.position = attackspawn.position;
-        //Fireball[FindFireball()].GetComponent<Projectile>().SetDirection(Mathf.Sign(transform.localScale.x));
     }
-
-    //private int FindFireball()
-    //{
-    //    for (int i = 0; i < Fireball.Length; i++)
-    //    {
-    //        if (!Fireball[i].activeInHierarchy)
-    //            return i;
-    //    }
-    //    return 0;
-    //}
 }

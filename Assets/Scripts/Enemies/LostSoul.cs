@@ -18,8 +18,6 @@ public class LostSoul : Enemy
 
     [SerializeField] private AudioClip runningSound;
     [SerializeField] private AudioClip hugSound;
-    //[SerializeField] private AudioClip ouchSound; //move to health
-    //[SerializeField] private AudioClip deathSound; //move to health
 
     private Animator anim;
     private Health playerHealth;
