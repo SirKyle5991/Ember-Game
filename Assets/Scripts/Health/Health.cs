@@ -69,11 +69,11 @@ public class Health : MonoBehaviour
 
     private void Update()
     {
-        if (gameObject.CompareTag("Player"))
-        {
-            if (Input.GetKeyDown(KeyCode.W))
-                TakeDamage(1);
-        }
+        //if (gameObject.CompareTag("Player"))
+        //{
+        //    if (Input.GetKeyDown(KeyCode.W))
+        //        TakeDamage(1);
+        //}
         if (dead == true)
         {
                 StartCoroutine(DeathAfterDelay());
