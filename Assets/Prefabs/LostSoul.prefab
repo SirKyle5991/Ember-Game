@@ -147,7 +147,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92bb2a094852e254fb10db081c9ee5f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingHealth: 4
+  startingHealth: 5
   icewalldeathSound: {fileID: 0}
   lostsoulouchSound: {fileID: 8300000, guid: 57d8e1a5f6da96b4e8dda470fb8c82b7, type: 3}
   lostsouldeathSound: {fileID: 8300000, guid: 3e5cf8a99fd43f94fbdbd72445156b3f, type: 3}

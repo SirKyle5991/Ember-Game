@@ -6,16 +6,19 @@ public class PlayerRespawn : MonoBehaviour
 {
     public Transform currentCheckpoint;
     private Health playerHealth;
+    private PlayerController dashy;
 
     private void Awake()
     {
         playerHealth = GetComponent<Health>();
+        dashy = GetComponent<PlayerController>();
     }
 
     IEnumerator DeathBeforeRespawn()
     {
         //Set to 0 as no animation has been made for it yet
         Debug.Log(currentCheckpoint);
+        dashy.canDash = true;
         GetComponent<PlayerController>().enabled = false;
         yield return new WaitForSeconds(1f);
         transform.position = currentCheckpoint.position;

@@ -27,7 +27,7 @@ public class PlayerController : MonoBehaviour
 
     public bool grounded;
 
-    private bool canDash = true;
+    public bool canDash = true;
     private bool isDashing;
     private bool isJumping;
     private float dashingPower = 13f;
@@ -142,7 +142,7 @@ public class PlayerController : MonoBehaviour
         {
             return;
         }
-
+        //Debug.Log(canDash);
         
         horizontalInput = playerHorizontal.ReadValue<float>(); //read a axis action
 
